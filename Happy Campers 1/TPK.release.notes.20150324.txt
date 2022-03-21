@@ -1,0 +1,10 @@
+P685-347
+Fixed the ability to play the audio at spread level and zoom into hotspots at the same time, without breaking the audio
+
+P685-325
+Cleaned up the linking reference so that by default the link back is always the default page where the link was originally made
+
+P685-346
+Fixed the hotspot zoom into the centre of the screen for both single and double page spreads
+
+Fixed the issue with multiple assets (video, audio, interactive) loading into a carousel at the page level

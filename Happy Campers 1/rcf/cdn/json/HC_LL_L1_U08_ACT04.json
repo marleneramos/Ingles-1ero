@@ -1,0 +1,27 @@
+{
+  "id": "ca546e36ca6f439583ab465a6162ed1b",
+  "answers": [
+    {
+      "elm": "wordSnake_1",
+      "type": "list",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": [
+        "wordSnake_1_L1,wordSnake_1_L2,wordSnake_1_L3,wordSnake_1_L4,wordSnake_1_L5,wordSnake_1_L6,wordSnake_1_L7",
+        "wordSnake_1_L8,wordSnake_1_L9,wordSnake_1_L10,wordSnake_1_L11,wordSnake_1_L12,wordSnake_1_L13",
+        "wordSnake_1_L14,wordSnake_1_L15,wordSnake_1_L16,wordSnake_1_L17"
+      ]
+    },
+    {
+      "elm": "wordSnake_2",
+      "type": "list",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": [
+        "wordSnake_2_L1,wordSnake_2_L2,wordSnake_2_L3,wordSnake_2_L4,wordSnake_2_L5,wordSnake_2_L6,wordSnake_2_L7",
+        "wordSnake_2_L8,wordSnake_2_L9,wordSnake_2_L10,wordSnake_2_L11,wordSnake_2_L12,wordSnake_2_L13,wordSnake_2_L14",
+        "wordSnake_2_L15,wordSnake_2_L16,wordSnake_2_L17,wordSnake_2_L18,wordSnake_2_L19,wordSnake_2_L20,wordSnake_2_L21,wordSnake_2_L22"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "b20613e14c69499390713cc02f84fa18",
+  "answers": [
+    {
+      "elm": "typein_1",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "color"
+    },
+    {
+      "elm": "typein_2",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "a"
+    },
+    {
+      "elm": "typein_3",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "c"
+    },
+    {
+      "elm": "typein_4",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "What"
+    },
+    {
+      "elm": "typein_5",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "d"
+    },
+    {
+      "elm": "typein_6",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "i"
+    },
+    {
+      "elm": "typein_7",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "t"
+    },
+    {
+      "elm": "typein_8",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "is"
+    },
+    {
+      "elm": "typein_9",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "it"
+    },
+    {
+      "elm": "typein_10",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "It's"
+    },
+    {
+      "elm": "typein_11",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "e"
+    },
+    {
+      "elm": "typein_12",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "l"
+    },
+    {
+      "elm": "typein_13",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "l"
+    },
+    {
+      "elm": "typein_14",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "What"
+    },
+    {
+      "elm": "typein_15",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "color"
+    },
+    {
+      "elm": "typein_16",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "is"
+    },
+    {
+      "elm": "typein_17",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "It's"
+    },
+    {
+      "elm": "typein_18",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "l"
+    },
+    {
+      "elm": "typein_19",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "u"
+    }
+  ]
+}

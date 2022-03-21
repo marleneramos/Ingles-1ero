@@ -1,0 +1,110 @@
+{
+  "id": "e2fbf8fa99814e518c7b9873b7a03753",
+  "answers": [
+    {
+      "elm": "typein_6",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "How"
+    },
+    {
+      "elm": "typein_7",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "many"
+    },
+    {
+      "elm": "typein_8",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "chairs"
+    },
+    {
+      "elm": "typein_9",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "are"
+    },
+    {
+      "elm": "typein_10",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "there"
+    },
+    {
+      "elm": "typein_11",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "How"
+    },
+    {
+      "elm": "typein_12",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "many"
+    },
+    {
+      "elm": "typein_13",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "candles"
+    },
+    {
+      "elm": "typein_14",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "are"
+    },
+    {
+      "elm": "typein_15",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "there"
+    },
+    {
+      "elm": "typein_16",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "How"
+    },
+    {
+      "elm": "typein_17",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "many"
+    },
+    {
+      "elm": "typein_18",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "balloons"
+    },
+    {
+      "elm": "typein_19",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "are"
+    },
+    {
+      "elm": "typein_20",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "there"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 20, 2014, 3:42:29 PM
+    Author     : jessewonjaelee
+*/
+.left-handed #tools.shown .btn-header, .tools-container-2 .btn-header:hover, .tools-container-2 .btn-header,
+#dialog-note-warning .dialog-button-pane button, #buttons button, .save-data, .edit-data,
+.stop-watch-btn-tools,
+.ui-dialog-titlebar,
+#header,
+.pages-tabs-scroller, .back-header,
+.panel .front > a,
+.header{
+    /*background-color: #e40327;*/
+}
+#header{
+    border-bottom-color:#e40327;
+}
+.btn-toggle .btn:first-child, .btn-toggle .btn:last-child, .btn-toggle .btn, #header .btn{
+    /*border-color:#bd9393;*/
+}

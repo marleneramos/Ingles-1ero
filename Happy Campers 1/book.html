@@ -1,0 +1,319 @@
+<body id="bookcontents">
+<!--preloads the audio-->
+<audio src="./sound/tick.mp3" />
+<audio src="./sound/alert.mp3" />
+	<span id="cursor"></span>
+	<div id="invisibleAlertPlayer"></div>
+	<div id="invisibleAudioPlayer"></div>
+	<div class="flip-overlay top"></div>
+
+	<!-- Menu Begin -->
+	<div id="pages" class="">
+		<div class="entry panel flip">
+			<div class="back">
+				<div class="back-header">
+					<span class="select-menu">
+						<span class="selected">
+							<!--title goes here via javascript-->
+						</span>
+						<span class="select-options">
+							<!--menus populate here via javascript-->
+						</span>
+					</span>
+					<i>Contents Menu</i>
+					<a class="panel-close"></a>
+				</div>
+			</div>
+			<div class="back-content">
+				<!--contents go here via javascript-->
+			</div>
+		</div>
+	</div>
+	<div id="header">
+		<a class="btn btn-home" alt="Home" href="./index.html"><!--home--></a>
+		<a class="btn btn-menu" alt="Menu">Menu</a>
+		<a class="btn btn-help" alt="Help" data-dialog="true" data-dialog-title="Help" data-dialog-modal="0" data-target="dialog-help" data-dialog-width="795"></a>
+		<div id="pagenum">
+			<span>Level</span> <span id="levelnum">1</span>, <span id="unitnum">5</span>
+		</div>
+		<a id="logo"><img alt="Logo" src="./img/lato-logo-2.png" /></a>
+		<a class="app-close"></a>
+	</div>
+	<div id="tools" class="btn-container swappable">
+
+		<div class="tools-container-2">
+			<a class="btn btn-header" alt="Tools"><span>Tools</span></a>
+			<span class="btn btn-pointer" alt="Pointer"><span id="wrd-pointer">Pointer</span><i></i></span>
+			<span class="btn btn-pen" alt="Pen">
+				<span id="wrd-pen">Pen</span>
+				<div class="btn-options">
+					<div class="btn-pen-colors">
+						<span style="background-color:#000" class="selected"></span>
+						<span style="background-color:#54b947"></span>
+						<span style="background-color:#3a53a4"></span>
+						<span style="background-color:#e82425"></span>
+					</div>
+					<i class="btn-pen-width btn-pen-width-1 selected" data-pen-size="1"></i>
+					<i class="btn-pen-width btn-pen-width-2" data-pen-size="4"></i>
+					<i class="btn-pen-width btn-pen-width-3" data-pen-size="9"></i>
+				</div>
+				<i></i>
+				<i class="show-options-tip"></i>
+			</span>
+
+			<span class="btn btn-highlighter" alt="Highlighter">
+				<input id="hslColor" type="hidden" />
+				<span id="wrd-highlighter">Highlighter</span>
+				<div id="hslPicker"></div>
+				<i></i>
+				<i class="show-options-tip"></i>
+			</span>
+			<span class="btn btn-eraser" alt="Eraser"><span>Eraser</span><i></i></span>
+			<span class="btn btn-stopwatch" data-target="dialog-timer" data-class="bigger-timer" data-dialog="true" data-dialog-title="Stopwatch" data-dialog-modal="0" alt="Timer"><span id="wrd-stopwatch">Stopwatch</span><i></i></span>
+			<span class="btn btn-mask" alt="Mask"><span id="wrd-mask">Mask</span> <button class="trash-data">trash</button> <i></i></span>
+			<span class="btn btn-spotlight" alt="Spotlight"><span id="wrd-spotlight">Spotlight</span> <button class="trash-data">trash</button> <i></i></span>
+			<span class="btn btn-notes has-data" data-dialog-resizable="1" data-target="dialog-note" data-dialog="true"  data-dialog-title="Notepad" data-dialog-modal="0" alt="Notepad"><span id="wrd-notes">Notepad</span> <button class="trash-data">1</button> <i></i></span>
+			<span class="btn btn-hotspots" alt="Hotspots"><span id="wrd-hotspots">Hotspots</span><i></i></span>
+		</div>
+	</div>
+	<div id="menu" class="btn-container swappable">
+		<div class="page-turner">
+			<div class="btn-epv-wrapper btn-epv">
+				<span class="btn prev">Prev</span> <span class="btn next">Next</span>
+			</div>
+			<div class="page-turner-btn-wrapper">
+				<a class="btn btn-left pageloader" href="1"></a><a class="btn btn-right pageloader" href="2"></a>
+			</div>
+			<span class="page-num-1">1</span>
+			<span id="amp">&amp;</span>
+			<span class="page-num-2">2</span>
+		</div>
+
+		<div id="ebookselectorwrapper" class="">
+			<div id="ebookselector" class="btn-toggle"></div>
+			<a id="wrd-swap" class="btn btn-swap">Swap sides</a>
+			<div class="media-tools-container">
+				<span class="btn btn-audio"><span>audio</span></span>
+				<span class="btn btn-audiop"><span>audio</span></span>
+				<span class="btn btn-video"><span>video</span></span>
+				<span class="btn btn-answers" data-dialog-resizable="1" data-dialog="true" data-modal="0" data-dialog-title="Answers" data-target="dialog-answers"><span>answers</span><i></i></span>
+				<span class="btn btn-interactive" data-dialog-modal="1" data-dialog="true" data-dialog-title="Interactive Activity" data-target="dialog-interactive" xdata-dialog-resizable="1"><span>Activity</span><i></i></span>
+				<span class="btn btn-teacher-tips" data-dialog-width="450" data-dialog="true" data-dialog-resizable="1" data-dialog-title="Smart Tips" data-dialog-modal="0" data-target="dialog-teacher-tips"><span>smart tips</span></span>
+				<span class="btn btn-vocabulary-tool" data-dialog="true" data-dialog-resizable="1" data-dialog-title="Vocabulary Tools" data-dialog-modal="0" data-target="dialog-vocab"><span>vocab</span></span>
+
+				<span class="btn btn-karaoke" data-dialog-modal="1" data-dialog="true" data-dialog-title="Song Activity" data-target="dialog-karaoke" xdata-dialog-resizable="1"><span>Karaoke</span><i></i></span>
+				<span class="btn btn-image" data-dialog-resizable="1" data-dialog="true" data-modal="0" data-dialog-title="Image" data-target="dialog-image"><span>image</span><i></i></span>
+			</div>
+		</div>
+	</div>
+	<div id="menu-center" class="btn-container">
+
+	</div>
+	<!-- Menu end -->
+	<!-- Draw layer -->
+
+	<div id="pagecontent" style="-webkit-transition: 350ms ease-out;">
+		<div id="canvasDiv"></div>
+		<div id="hotspotDiv"><canvas id="hotspotCanvas"></canvas></div>
+		<div id="data"></div>
+	</div>
+
+
+
+	<!-- Popups start -->
+
+	<!--help popup-->
+	<div id="dialog-help" class="dialog">
+		<iframe id="iFrame-help" src="./faq/help_En.html"></iframe>
+	</div>
+
+	<!--audio popup-->
+	<div id="dialog-audio" class="dialog">
+		<div id="audioAss" class="assClass"></div>
+		<div id="audioTitle"></div>
+		<div id="audioPlayer" data-audio-src=""></div>
+		<div class="audioControls">
+			<a class="jp-play"></a>
+			<a class="jp-pause"></a>
+			<div class="progress-wrapper">
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a id="showAudioScript">Show audio script</a>
+		<div id="audioScript">
+			<div class="script-window">
+				<div class="script-pane">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--audio page popup: P-Model-->
+	<div id="dialog-audiop" class="dialog pagedialog">
+		<div id="audioAssp" class="assClass"></div>
+		<div id="audioTitlep"></div>
+		<div id="audioPlayerp" data-audio-src=""></div>
+		<div class="audioControls">
+			<a class="jp-play"></a>
+			<a class="jp-pause"></a>
+			<div class="progress-wrapper">
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a id="showAudioScriptp">Show audio script</a>
+		<div id="audioScriptp">
+			<div class="script-window">
+				<div class="script-pane">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--video popup-->
+	<div id="dialog-video" class="dialog">
+		<div id="videoAss" class="assClass"></div>
+		<div id="videoPlayer" data-video-src=""></div>
+
+		<div id="videoControls">
+
+			<div class="progress-wrapper">
+				<div class="jp-progress">
+					<div id="seekbar" class="jp-seek-bar">
+						<div id="playbar" class="jp-play-bar"></div>
+					</div>
+				</div>
+			</div>
+			<div class="controls-wrapper">
+				<div class="controls-left">
+					<a class="jp-play">play</a>
+					<a class="jp-pause">pause</a>
+					<div class="jp-current-time"></div>
+					<span class="jp-time-separator">/</span>
+					<div class="jp-duration"></div>
+				</div>
+				<div class="controls-right">
+					<a class="jp-mute"></a>
+					<a class="jp-unmute"></a>
+					<div class="jp-volume-bar">
+						<div class="jp-volume-bar-value"></div>
+					</div>
+					<a id="showVideoScript"></a>
+					<a href="javascript:;" class="jp-full-screen" title="full screen">full screen</a>
+					<a href="javascript:;" class="jp-restore-screen" title="restore screen" style="display:none;">restore screen</a>
+				</div>
+			</div>
+		</div>
+		<div id="videoScript">
+			<div class="video-script-window">
+				<div class="video-script-pane">
+					<div class="srt" data-video="" data-srt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- RCF Interactive Activity PopUp -->
+	<div id="dialog-interactive" class="dialog">
+		<div id="interactiveAss" class="assClass"></div>
+		<iframe id="iFrame-rcf" src=""></iframe>
+	</div>
+	<div id="dialog-karaoke" class="dialog">
+		<iframe id="iFrame-rcf-k" src=""></iframe>
+	</div>
+	<!-- END RCF Interactive Activity PopUp -->
+
+	<!--answer popup-->
+	<div id="dialog-answers" class="dialog">
+		<form style="font-size:2em;">
+			<div class="form-input">
+				<span>1</span><input type="text" />
+			</div>
+			<div class="form-input">
+				<span>2</span><input type="text" />
+			</div>
+			<div class="form-input">
+				<span>3</span><input type="text" />
+			</div>
+			<div class="form-input">
+				<span>4</span><input type="text" />
+			</div>
+			<div class="form-input">
+				<span>5</span><input type="text" />
+			</div>
+		</form>
+		<span id="show-all-answers">
+			Show answers
+			<div class="button-pane">
+				<a class="btn btn-answers-all">All</a>
+				<a class="btn btn-num">1st</a>
+			</div>
+		</span>
+		<span id="reset-answers">
+			Reset
+			<div class="button-pane">
+				<a id="reset" class="btn-reset" style="background-image: url('./img/lato-reset.png');padding: 4px 20px;width: 28px;height: 28px;display: inline-block;margin: 5px;cursor: pointer;background-repeat: no-repeat;background-position: center;-webkit-transition: background-color 0.2s ease-in-out;-moz-transition: background-color 0.2s ease-in-out;transition: background-color 0.2s ease-in-out;"></a>
+			</div>
+		</span>
+	</div>
+	<!--teacher tips popup-->
+	<div id="dialog-teacher-tips" class="dialog"></div>
+
+	<!--note popup-->
+	<div id="dialog-note" class="dialog">
+		<div id="user_warning">
+			<h1>Click 'Save' to save your notes.</h1>
+			<div><label><input type="checkbox" id="ignore_user_warning"/> Don't show this message again.</label></div>
+		</div>
+		<div id="user_notes" style="height:180px;margin-bottom:40px;"></div>
+		<textarea id="user_notes_txtarea" placeholder="Type here to enter text" style="display:none;height:180px;"></textarea>
+		<div class="dialog-button-pane">
+			<button class="edit-data">edit</button>
+			<button class="save-data" style="display:none;">save</button>
+		</div>
+	</div>
+	<div id="dialog-note-warning" class="dialog">
+		<div>
+			Do you want to save changes to this note?
+		</div>
+		
+		<div class="dialog-button-pane">
+			<button id="b1" class="-data">Save</button>
+			<button id="b2" class="-data">Don't save</button>
+			<button id="b3" class="-data">Cancel</button>
+		</div>
+	</div>
+
+	<!--timer popup-->
+	<div id="dialog-timer" class="dialog">
+		<div id="timer">
+			<input type="text" id="timerMin" value="00" /><span id="timerSeparator">:</span><input type="text" id="timerSec" value="00" />
+		</div>
+		<div class="stop-watch-btn-tools">
+			<a id="addMin" class="stop-watch-btn">add minute</a>
+			<a id="addSec" class="stop-watch-btn">add second</a>
+			<a id="minusMin" class="stop-watch-btn">minus minute</a>
+			<a id="minusSec" class="stop-watch-btn">minus second</a>
+		</div>
+		<a id="closeTimer" class="stop-watch-btn">close</a>
+		<a id="startTimer" class="stop-watch-btn">resume</a>
+		<a id="refreshTimer" class="stop-watch-btn">refresh</a>
+	</div>
+
+	<!--vocab dialog-->
+	<div id="dialog-vocab" class="dialog"></div>
+	<!--image dialog-->
+	<div id="dialog-image" class="dialog"></div>
+	<!-- Popups end -->
+
+	<script type="text/javascript" >
+		mainjs();
+		languagePack();
+	</script>
+</body>

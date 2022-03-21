@@ -1,0 +1,50 @@
+/* Happy Campers desktop styles */
+
+/************************** BASE **************************/
+
+h2 {
+	margin-bottom: 24px;
+}
+
+/* LIST */
+.main ol.alpha,
+.main ol.numbered,
+.main ol.radioList {
+	margin-bottom: 1.75em;
+}
+.main ol.lastChild, .main ol.mm_lastChild {
+	margin-bottom: 0;
+}
+
+/************************** LAYOUT **************************/
+
+/************************** MODULE **************************/
+
+/*** MARKED COMPONENENTS ***/
+
+/*** UNMARKED COMPONENENTS ***/
+
+/*** CONTENT STYLING ***/
+
+/* BLOCKS PADDING */
+.mm_padder,
+.mm_blockShadow {
+	padding: 1.75em;
+}
+.mm_padderHalf {
+	padding: 0.875em;
+}
+.mm_padderDouble {
+	padding: 3.5em;
+}
+
+/* IMAGE */
+.mm_imageRight768 img {
+	float: right;
+	margin-left: 1.75em;
+	width: 48%;
+}
+
+/*** USEFUL ***/
+
+/************************** THEME **************************/

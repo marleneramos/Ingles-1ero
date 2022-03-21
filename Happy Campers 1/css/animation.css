@@ -1,0 +1,38 @@
+@keyframes swap-position{
+    50%{
+        position: fixed;
+        left:-300px;
+        opacity:0;
+    }
+    51%{
+        left:inherit;
+        position:fixed;
+        right:-300px;
+        opacity:0;
+    }
+    100%{
+        left:inherit;
+        position:fixed;
+        right:0;
+        opacity:1;
+    }
+}
+@-webkit-keyframes swap-position{
+    50%{
+        position: fixed;
+        left:-300px;
+        opacity:0;
+    }
+    51%{
+        left:inherit;
+        position:fixed;
+        right:-300px;
+        opacity:0;
+    }
+    100%{
+        left:inherit;
+        position:fixed;
+        right:0;
+        opacity:1;
+    }
+}

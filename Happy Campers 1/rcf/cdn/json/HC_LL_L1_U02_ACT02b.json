@@ -1,0 +1,38 @@
+{
+  "id": "f10baa74cead417eb9f9cc8fe34bdd37",
+  "answers": [
+    {
+      "elm": "matching_1",
+      "type": "composite",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": [
+        {
+          "elm": "matchTarget_6",
+          "type": "simple",
+          "value": "matchItem_6"
+        },
+        {
+          "elm": "matchTarget_7",
+          "type": "simple",
+          "value": "matchItem_7"
+        },
+        {
+          "elm": "matchTarget_8",
+          "type": "simple",
+          "value": "matchItem_8"
+        },
+        {
+          "elm": "matchTarget_9",
+          "type": "simple",
+          "value": "matchItem_9"
+        },
+        {
+          "elm": "matchTarget_10",
+          "type": "simple",
+          "value": "matchItem_10"
+        }
+      ]
+    }
+  ]
+}

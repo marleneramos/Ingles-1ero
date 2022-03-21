@@ -1,0 +1,83 @@
+{
+  "id": "dcb168f4aa4e4b1299f5bc9a61fe6127",
+  "answers": [
+    {
+      "elm": "ordering_3",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "m",
+        "i",
+        "l",
+        "k"
+      ]
+    },
+    {
+      "elm": "ordering_4",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "p",
+        "i",
+        "z",
+        "z",
+        "a"
+      ]
+    },
+    {
+      "elm": "ordering_5",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "h",
+        "o",
+        "t"
+      ]
+    },
+    {
+      "elm": "ordering_6",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "d",
+        "o",
+        "g"
+      ]
+    },
+    {
+      "elm": "ordering_7",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "c",
+        "o",
+        "o",
+        "k",
+        "i",
+        "e"
+      ]
+    },
+    {
+      "elm": "ordering_8",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "h",
+        "a",
+        "m",
+        "b",
+        "u",
+        "r",
+        "g",
+        "e",
+        "r"
+      ]
+    }
+  ]
+}

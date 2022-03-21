@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <!--<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />-->
+        <!--<link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic' rel='stylesheet' type='text/css'>-->
+        <link rel="stylesheet" href="./js/prettify/prettify.css" />
+        <link rel="stylesheet" href="./css/jquery.colorpickersliders.css" />
+        <link rel="stylesheet" href="./css/jquery-ui-1.10.4.custom.css" />
+        <link rel="stylesheet" href="./css/bootstrap.css" />        
+        <link rel="stylesheet" href="./css/fonts.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/animation.css" />
+        <link rel="stylesheet" href="./css/home.css" title="homeCss"/>
+        <link rel="stylesheet" href="./css/chosen.css" />
+        <link rel="stylesheet" href="./css/level1.css" />
+        
+        <!--[if IE]>
+        <link rel="stylesheet" href="./css/ie.css" />
+        <![endif]-->
+
+        <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="./js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="./js/chosen.jquery.js"></script>
+        <script type="text/javascript" src="./js/chosen.proto.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.transition.min.js"></script>
+        <script type="text/javascript" src="./js/hammer.js"></script>
+        <!--<script type="text/javascript" src="./js/drag.js"></script>-->
+        <script type="text/javascript" src="./js/scroll.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+
+        <script type="text/javascript" src="./js/jquery-ui.dialogextend.js"></script>
+        <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="./js/prettify/prettify.js"></script>
+        <script type="text/javascript" src="./js/tinycolor.js"></script>
+        <script type="text/javascript" src="./js/jPlayer/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="./js/prettify/prettify-jPlayer.js"></script>
+        <script type="text/javascript" src="./js/jquery.colorpickersliders.js"></script>
+        <!-- new draw layer -->
+        <script type="text/javascript" src="./js/neosvg.js"></script>
+
+    </head>
+    <body id="bookcontents">
+        <div class="flip-overlay"></div>
+        <div id="help-dialog" class="dialog">
+            <p>
+                Ut In Nulla Enim. Phasellus Molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis.</p>
+            <div class="select-wrapper">
+                <select id="language" data-placeholder="Change Language">
+                    <option value="0">Change language</option>
+                    <option value="1" selected>English</option>
+                    <option value="2">Castillian</option>
+                    <option value="3">Catalonian</option>
+                </select>
+            </div>
+        </div>
+        <div class="header">
+            <a class="btn btn-home"></a>
+            <a class="app-close"></a>
+        </div>
+        <div class="entries-container">
+            <div class="entries-wrapper">
+                <div class="entries" id="entries">
+                    <!--span class="band"></span-->
+                </div>
+                
+                 <!--  <div class="gateways">
+                    <a href="#" class="gateway vocab" title=""><span>Vocabulary<br/>Tool</span></a>
+					<a href="#" class="gateway dialogue" title=""><span>Dialogue<br/>Tool</span></a>
+                    <a href="#" class="gateway storyteller" title=""><span>Story<br/>Tool</span></a>
+                    <a href="#" class="gateway grammar" title=""><span>Grammar<br/>Tool</span></a>
+                  </div> -->
+                  <!--a class="help">Help</a-->
+            </div>
+        </div>
+        <div class="footer">
+            <div class="links">
+                <a id="ack" href="http://www.highfive.macmillan.es/high-five-acknowledgements" target="_blank">Credits</a>
+                <a id="lic" href="http://www.highfive.macmillan.es/high-five-end-user-licence-agreement" target="_blank">Licence agreement</a>
+            </div>
+            <a class="logo"></a>
+            <!--<span class="copy">&copy; Macmillan Publishers Limited 2014</span>-->
+        </div>
+    <script type="text/javascript" src="./manifest.js"></script>
+    <script type="text/javascript" src="./language.js"></script>
+    <script type="text/javascript">
+    
+    	var BOOKTITLE = '';
+    	var STARTPAGE = '';
+			var UNITTITLE = '';
+    	var page_contents = [];
+    
+    	function divload(div, url) {
+                $.ajax({
+                        type: "GET",
+                        url: url,
+                        success: function(data){
+                                $('link[title="homeCss"]')[0].disabled=true;
+                                $(div).html(data);
+                        },
+                        error: function(data) {
+                                console.log(data);
+                        }
+                });
+        }
+        
+        function resize(){
+            if($(window).innerHeight() <= 728){
+                $('.entry').addClass('small');
+                $('body').addClass('small');
+                $('.scroll-pane').css({
+                    height:271
+                });
+            }
+            else{
+                $('.entry').removeClass('small');
+                $('body').removeClass('small');
+                $('.scroll-pane').css({
+                    height:387
+                });
+            }
+        }
+    	
+        $(document).ready(function() {
+
+            if(navigator.appVersion.indexOf("Win") != -1){
+                $('head')
+                        .append('<link rel="stylesheet" type="text/css" href="./css/win.css" />');
+            }
+    
+            $('.panel .front').mouseup(function() {
+                
+            	if($(this).find('div.panel-speckle').is(':visible')) {
+            		return false;
+            	}
+            	
+                $('.entry.panel:not(:eq('+$(this).parents('.panel').index()+'))').append('<div class="panel-speckle"/>');
+                $('.entry.panel:not(:eq('+$(this).parents('.panel').index()+')) .front').append('<div class="panel-speckle"/>');
+                
+                if ($('.flip-overlay').is(':visible')) {
+                    $(this).parents('.panel').addClass('flip');
+                }
+                else {
+                    $('.flip-overlay, .panel-speckle').fadeIn();
+                    $(this).parents('.panel').addClass('flip');
+                }
+            });
+            $('.panel-close').mouseup(function() {
+
+                $(this).parents('.panel').removeClass('flip');
+                if ($('.panel.flip').length) {
+
+                }
+                else {
+                    $('.flip-overlay').fadeOut();
+                    $('.panel-speckle').fadeOut(function(){
+                        $(this).remove();
+                    });
+                }
+
+                if ($('body > .info-wrapper').length) {
+                    var $this = $('body > .info-wrapper');
+                    $('.entry:eq(' + (parseInt($this.attr('data-panel'))) + ') .scroll > li:eq(' + (parseInt($this.attr('data-index'))) + ')').append($this);
+                }
+            });
+            $('body').on('click','.info',function() {
+
+                var $self = $(this);
+                var offset_x = $(this).offset().left;
+                var offset_y = $(this).offset().top;
+
+                if ($('body > .info-wrapper').length) {
+                    var $this = $('body > .info-wrapper');
+                    $('.entry:eq(' + (parseInt($this.attr('data-panel'))) + ') .scroll > li:eq(' + (parseInt($this.attr('data-index'))) + ')').append($this);
+                }
+
+                $('ul .info-wrapper').removeClass('show');
+                $('.info-wrapper.show').remove();
+
+                $(this).parent().find('.info-wrapper').addClass('show').appendTo('body');
+
+                $('body > .info-wrapper').css({
+                    left: offset_x - $('body > .info-wrapper').outerWidth(true) - 10,
+                    top: offset_y-10
+                }).attr('data-index', $self.parents('li').index()).attr('data-panel', $self.parents('.panel').index());
+
+            });
+            
+            $('.info-wrapper-close').on('mouseup',function(){
+                if ($('body > .info-wrapper').length) {
+                    var $this = $('body > .info-wrapper');
+                    $('.entry:eq(' + (parseInt($this.attr('data-panel'))) + ') .scroll > li:eq(' + (parseInt($this.attr('data-index'))) + ')').append($this);
+                }
+            });
+            
+            $('.unit').on('click',function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                $(this).parents('li').toggleClass('shown');
+                updateScrollEventOf($(this));
+
+                if ($('body > .info-wrapper').length) {
+                    var $this = $('body > .info-wrapper');
+                    $('.entry:eq(' + (parseInt($this.attr('data-panel'))) + ') .scroll > li:eq(' + (parseInt($this.attr('data-index'))) + ')').append($this);
+                }
+                return false;
+            });
+            $('.scroll-pane').each(function() {
+                var $self = $(this);
+                $(this).css({
+                    height: $self.parents('.back').height() - $('.back-header').outerHeight(true)
+                });
+            });
+            //scroll up and down the pages
+            $('.pages-tab-scrollbottom').on('mouseup', function() {
+                scrollUpDown('down', $(this));
+            });
+
+            $('.help').on('mouseup',function() {
+                $('#help-dialog').dialog({
+                    modal: true,
+                    resizable: false,
+                    title: 'Help',
+                    width: 400,
+                    draggable: false,
+                    closeOnEscape: true
+                });
+            });
+            $(window).resize(function(){
+                resize();
+            });
+			
+            $('a.app-close').on('click', function() {
+        		TITLEMANAGER.content.quitContentExitFullscreen();
+        	});
+            
+            resize();
+						
+						if (manifest['license']) {
+							$('#lic').attr('href', manifest['license']);
+						}
+						if (manifest['acknowledgement']) {
+							$('#ack').attr('href', manifest['acknowledgement']);
+						}
+
+        });
+    </script>
+    <script>
+        //in main
+        function cleanStr(str) {
+				return str.replace(/['"\-\=\+\_\!\~\@\[\]\&\^%()\{\}; ]/g, '');
+        }
+        if (manifest["Components"])
+            $.each(manifest["Components"], function(index, component) {
+                if ('ebook' === component['type']) {
+                    var cb = cleanStr(component['title']);
+                    var cvids = 0, caudios = 0, cactivities = 0, ctips = 0;
+
+                    var str =
+                            '<div class="entry panel">' +
+                            '<div class="front">' +
+										'<img src="' + component['thumbnail'] + '" />' +
+                            '<a href="#">'+
+                            '<span>' + component['title'] + '</span><i></i>'+
+                            '</a>' +
+                            '</div>' +
+                            '<div class="back">' +
+                            '<div class="back-header">' +
+                            '<h1>' + component['title'] + ' | <strong>Contents Menu</strong></h1>' +
+                            '<a class="panel-close"></a>' +
+                            '</div>' +
+                            '<div class="back-content scrollcontent">' +
+                            '<div class="scroll-pane">' +
+										'<ul class="scroll">'
+										;
+						$.each(component['unit_contents'], function(uid, unit) {
+							str = str + '<li>' +
+                            '<a class="pageloader unit" book="' + cb + '" >'+
+											'<i></i><span>' + unit['title'] + '</span>' +
+                            '</a>' +
+                            '<ul>';
+							$.each(unit['page_contents'], function(id, page) {
+								str = str + '<li><a class="pageloader" book="' + cb + '" unit="' + unit['title'] + '" href="' + id + '"><span>' + page['title'] + '</span><span class="pagenumbers">p' + page['pages'] + '</span></a></li>';
+                    });
+                    str = str +
+                            '</ul>' +
+											'</li>';
+						});
+						str = str +
+                            '</ul>' +
+                            '</div>' +
+                            '<div class="pages-tabs-scroller" data-num="0">' +
+                            '<a class="pages-tab-scrolltop"></a>' +
+                            '<a class="pages-tab-scrollbottom"></a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+
+                    $('#entries').append(str);
+                }
+            });
+        $('#entries').on('click', '.pageloader', function() {
+            STARTPAGE = $(this).attr('href');
+				UNITTITLE = $(this).attr('unit');
+            BOOKTITLE = $(this).attr('book');
+            if(typeof STARTPAGE !== 'undefined' && STARTPAGE !== false) {
+            	divload('body#bookcontents', './book.html');
+            	languagePack();
+							
+            }
+            return false;
+        });
+
+		//for offline mode, this function will already be defined in home
+		function languagePack() {
+			if (words) {
+				$.each(words, function (k,v) {
+					$(k).text(v);
+				});
+			}
+		}
+		
+		
+		//tricky: go locate this page in the manifest
+		function setUnitTitle(pg) {
+			$.each(manifest["Components"], function(index, component) {
+        if (BOOKTITLE === cleanStr(component['title'])) {
+					$.each(component['unit_contents'], function(uid, unit) {
+           if (unit['page_contents'][pg]) {
+						 UNITTITLE = unit['title'];
+						 $('#unitnum').html(UNITTITLE);
+						 return false;
+					 }
+				 });
+			 }
+		 });
+		}
+    </script>
+	</body>
+</html>

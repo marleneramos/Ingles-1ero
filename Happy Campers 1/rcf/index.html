@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Activity</title>
+		<link rel="stylesheet" href="cdn/rcf/style/rcf_core.css">
+		<link rel="stylesheet" href="cdn/rcf/style/rcf_768.css">
+		<link rel="stylesheet" href="cdn/rcf/style/jplayer.css">
+		
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="cdn/rcf/js/rcf.libs.min.js"></script>
+		<script type="text/javascript" src="cdn/rcf/js/rcf.min.js"></script>
+		
+		<style>
+			body {
+				font-family: Arial,Helvetica,sans-serif;
+				margin: 0;
+				width: 100%;
+				height: auto;
+				margin: 0;
+				background-color: #fff;
+			    padding-bottom: 43px!important;
+			}
+			#topbanner {
+				top: 0;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+			#wrapper {
+				width: 100%;
+				height: auto;
+				padding: 0;
+			}
+			#activity_window {
+				position: relative;
+				width: 960px;
+				border-radius: 20px;
+				border: 3px solid #ee7501;
+				background: #fff;
+				height: auto;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 25px;
+				top: 100px;
+			}
+			#activity_window h2 {
+				margin-left: 100px
+			}
+			.activityContainer {
+				max-width: 1000px;
+				min-height: 655px;
+				margin: 0 auto;
+			}			
+			
+			.nav {
+				float: left;
+				position: relative;
+				background: #fab200;
+				width: 105px;
+				border-radius: 8px 0 0 8px;
+				padding: 0;
+				top: 40px;
+				left: 108px;
+				font-size: 18px;
+			}
+			.nav>ul {
+				color: #000;
+				padding: 0;
+				margin: 0;
+			}
+			.nav>ul>li {
+				height: 30px;
+				list-style: none;
+				width :auto;
+				text-align: center;
+				padding-top: 10px;
+				font-weight: bold;
+			}
+			li.selected {
+				background: #ee7501;
+			}
+			#buttonset {
+				position: relative;
+				width: 960px;
+				text-align: center;
+			}
+			button {
+				border-radius: 6px;
+				border: 3px solid #fff;
+				width: 150px;
+				height: 40px;
+				background: #c3542c;
+				color: #fff;
+				margin: 10px;
+				cursor: pointer;
+				font-size: 1em;
+			}
+			button:disabled {
+				opacity: 0.3;
+			}
+			.navbutton {
+				background: #fff;
+				border-color: #c3542c;
+				color: #c3542c;
+			}
+
+			#buttons {
+			    /*position: fixed;*/
+			    /*left: 0;*/
+			    /*bottom: 0;*/
+			    background: #fff;
+			    width: 100%;
+			    /*z-index: 99999;*/
+				border-top: medium solid #000;
+			}
+			.btn {
+				display: inline-block;
+				padding: 5px 7px 3px 36px;
+				color: #fff;
+				font-weight: 300;
+				margin: 5px;
+				cursor: pointer;
+				background-repeat: no-repeat;
+				background-position: 8px center;
+				-webkit-transition:background-color 0.2s ease-in-out;
+				-moz-transition:background-color 0.2s ease-in-out;
+				transition:background-color 0.2s ease-in-out;
+				-webkit-box-shadow: none!important;
+				-moz-box-shadow: none!important;
+				box-shadow: none!important;
+				padding: 4px 20px;
+				background-color: #512d62;
+				color: #fff;
+				-webkit-font-smoothing: antialiased;
+				font-family: 'Lato', sans-serif;
+				line-height: 1.4em;
+			}
+			#show-all-answers, #reset-answers, #marking-answers {
+				text-align: center;
+				color: #111;
+				font-weight: normal;
+				margin: 0 10px 0 10px;
+				text-align: center;
+				display: block;
+				cursor: pointer;
+				float: left;
+			}
+			#marking-answers{
+			    float:right!important;
+			}
+			#reset-answers{
+			    position: absolute!important;
+			    left: 50%!important;
+			    margin-left: -36px!important;
+			}
+			.button-pane {
+				text-align: center;
+			}
+			.btn-reset {
+				background-image: url('../img/lato-reset.png');
+				padding:0;
+				width: 28px;
+				height: 28px;
+				display: inline-block;
+				margin: 5px;
+                position: relative;
+                top: 3px;
+				cursor: pointer;
+				background-repeat: no-repeat;
+				background-position: center;
+				-webkit-transition: background-color 0.2s ease-in-out;
+				-moz-transition: background-color 0.2s ease-in-out;
+				transition: background-color 0.2s ease-in-out;
+			}
+			html.karaoke body {
+				padding-bottom: 0!important;
+				background: transparent;
+			}
+			#show-all-answers label,
+			#reset-answers label,
+			#marking-answers label,
+			#show-all-answers .button-pane,
+			#reset-answers .button-pane,
+			#marking-answers .button-pane{
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.activity {
+				height: 640px;
+				overflow: auto;
+				overflow-x: hidden;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="activity"></div>
+		
+		<div id="buttons">
+			<span id="show-all-answers">
+                            <label>Show answers</label>
+				<div class="button-pane">
+					<a id="show" class="btn btn-answers-all">All</a>
+					<a id="shownext" class="btn btn-num">Next</a>
+				</div>
+			</span>
+			<span id="reset-answers">
+                            <label>Reset</label>
+				<div class="button-pane">
+					<a id="reset" class="btn-reset"></a>
+				</div>
+			</span>
+			<span id="marking-answers">
+                            <label>Marking</label>
+				<div class="button-pane">
+					<a id="check" class="btn btn-check">Check</a>
+					<a id="tryagain" class="btn btn-tryagain">Try again</a>
+				</div>
+			</span>
+		</div>
+		
+
+		<script type="text/javascript">
+			RCF.Application.initialize({ swfFallbackURL: "cdn/rcf/swf/" });
+			
+    		var regex = new RegExp("[\\?&]snippetID=([^&#]*)"),
+        	results = regex.exec(location.search);
+    		var snippetID = null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			if (location.search.indexOf('karaoke') > -1) {
+				karaoke();
+			}
+			else if (location.search.indexOf('reset=1') > -1) {
+				$('span#marking-answers').hide();
+				$('span#show-all-answers').hide();
+			}
+			else if (location.search.indexOf('allNextReset=1') > -1) {
+            	$('span#marking-answers').hide();
+			}
+			else if (location.search.indexOf('allResetCheckTryagain=1') > -1) {
+				$('a#shownext').hide();
+			}
+			else if (location.search.indexOf('allNextResetCheckTryagain=1') > -1) {
+				// do nothing
+			}
+			else if(location.search.indexOf('nongradeable=1') > -1) {
+				$('#buttons').hide();
+				$('html').addClass('karaoke');
+			}
+		
+			var regex2 = new RegExp("[\\?&]book=([^&#]*)");
+			results2 = regex2.exec(location.search);
+			var book = null ? "" : decodeURIComponent(results2[1].replace(/\+/g, " "));
+			console.log(book);
+			
+			 loadCSS = function(href) {
+     			var cssLink = $("<link rel='stylesheet' type='text/css' href='"+href+"'>");
+     			$("head").append(cssLink); 
+ 			};
+
+ 			book = book.toLowerCase(); //to lowercase to bypass case sensitivity issue
+
+ 			var book1 = "student";
+ 			var projectName1 = "happy_campers_sb_tpk";
+ 			var projectName2 = "happy_campers_ll_tpk";
+ 			var levelNumber = "Level_1";
+ 			
+
+			if(book.indexOf(book1) != -1){
+				loadCSS("cdn/series/"+ projectName1 +"/shared/style/"+ projectName1 +".css");
+				loadCSS("cdn/series/"+ projectName1 +"/shared/style/"+ projectName1 +"_768.css");
+				loadCSS("cdn/series/"+ projectName1 +"/"+ levelNumber +"/assets/style/level.css");
+				loadCSS("cdn/series/"+ projectName1 +"/"+ levelNumber +"/assets/style/level_768.css");
+			} else {
+				loadCSS("cdn/series/"+ projectName2 +"/shared/style/"+ projectName2 +".css");
+				loadCSS("cdn/series/"+ projectName2 +"/shared/style/"+ projectName2 +"_768.css");
+				loadCSS("cdn/series/"+ projectName2 +"/"+ levelNumber +"/assets/style/level.css");
+				loadCSS("cdn/series/"+ projectName2 +"/"+ levelNumber +"/assets/style/level_768.css");
+			}
+		
+
+			function karaoke() {
+				//no buttons
+				$('#buttons').hide();
+				$('html').addClass('karaoke');
+			}
+			
+			function getSnippet(snippetID, divID){
+				if(parent.hasOwnProperty('isDialogOpen') && parent.isDialogOpen()) {
+					$.get("cdn/html/" + snippetID + ".html", function(content){	
+						var $div = $('#' + divID);
+						$div.html(content);
+						$.when(RCF.Application.updateContent($div)).done(function(){
+							//resize parent iframe/dialog modal
+							if (location.search.indexOf('karaoke') > -1) {
+								parent.$('iframe#iFrame-rcf-k').trigger("iframe-kResize", [$('.activityContainer').css('max-width')]);
+							}
+							else {
+								parent.$('iframe#iFrame-rcf').trigger("iframeResize", [$('.activityContainer').css('max-width')]);
+							}
+						});
+					});
+				}
+			}
+			
+			getSnippet(snippetID, "activity");
+			
+			$('#check').on('click',function(){
+				$.getJSON("cdn/json/" + snippetID + ".json", function(correctAnswers){
+					var userAnswers = RCF.Application.getUserAnswers();		
+					var markedAnswers = RCF.MarkingEngine.getMarkedAnswers(correctAnswers, userAnswers);
+					RCF.publish("show.marked.answers", markedAnswers);
+				});
+			});
+			$('#show').on('click',function(){
+				$.getJSON("cdn/json/" + snippetID + ".json", function(JSONANSWERS){
+					RCF.publish('set.answers',JSONANSWERS);
+					RCF.publish("hide.marked.answers");
+					$('#shownext').addClass('disabled');
+				});
+			});
+			$('#reset').on('click',function(){
+				RCF.publish('reset.answers');
+				RCF.publish("hide.marked.answers");
+				$('#shownext').removeClass('disabled');
+			});
+			$('#useranswer').on('click',function(){
+				alert(JSON.stringify(RCF.Application.getUserAnswers(),null,2));
+			});
+
+			/*************************************/
+			
+			$('#tryagain').on('click',function(){
+				$.getJSON("cdn/json/" + snippetID + ".json", function(correctAnswers){
+					var userAnswers = RCF.Application.getUserAnswers();     
+					var markedAnswers2 = RCF.MarkingEngine.getMarkedAnswers(correctAnswers, userAnswers);
+					RCF.publish("try.again", markedAnswers2);
+					RCF.publish("hide.marked.answers");
+				});
+			});
+			$('#shownext').on('click',function(e){
+				var $self = $(this);
+				if(!$self.hasClass('disabled')){
+					RCF.publish("hide.marked.answers");
+					$.getJSON("cdn/json/" + snippetID + ".json", function(JSONANSWERS){
+							//RCF.publish('show.next.answer',JSONANSWERS);
+							if (!RCF.Application.showNextAnswer(JSONANSWERS)) {
+								$self.addClass('disabled');
+							}
+					});
+				}
+				else {
+					e.preventDefault();
+					return false;
+				}
+			});
+		</script>
+	</body>
+</html>

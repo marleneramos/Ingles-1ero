@@ -1,0 +1,19 @@
+{
+  "id": "17fd06ecfe8942ada6f57d34eddcbdd9",
+  "answers": [
+    {
+      "elm": "wordsearch_1",
+      "type": "list",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": [
+        "TEDDYBEAR",
+        "TRUCK",
+        "DOLL",
+        "KITE",
+        "BALL",
+        "YOYO"
+      ]
+    }
+  ]
+}

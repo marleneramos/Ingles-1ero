@@ -1,0 +1,38 @@
+{
+  "id": "9d5fb0ce9fa14337bc382614119e9199",
+  "answers": [
+    {
+      "elm": "ordering_1",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "What",
+        "color",
+        "is",
+        "it"
+      ]
+    },
+    {
+      "elm": "ordering_2",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "Is",
+        "it",
+        "yellow"
+      ]
+    },
+    {
+      "elm": "ordering_3",
+      "type": "sequence",
+      "markType": "list",
+      "markedBy": "engine",
+      "value": [
+        "It's",
+        "green"
+      ]
+    }
+  ]
+}

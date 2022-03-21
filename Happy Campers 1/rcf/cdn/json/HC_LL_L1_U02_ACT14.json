@@ -1,0 +1,19 @@
+{
+  "id": "d3c242983eac4daf8b4ab5fe9c2485d6",
+  "answers": [
+    {
+      "elm": "typein_2",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "have"
+    },
+    {
+      "elm": "typein_3",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "an"
+    }
+  ]
+}

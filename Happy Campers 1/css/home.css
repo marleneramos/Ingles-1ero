@@ -1,0 +1,398 @@
+body,html{
+    padding:0;
+    margin:0;
+    min-height:100%;
+    height:100%;
+    /* font-family: 'Lato', sans-serif; */
+    font-weight: 300;
+    -webkit-font-smoothing:antialiased;
+}
+body{
+    display: inherit;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    /*background-image:url('/img/kids-1.jpg');*/
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    min-width: 1024px;
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+    outline: none!important;
+}
+.entries{
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 0;
+    width: 100%;
+    left: 0;
+    /* height: 100%; */
+    vertical-align: middle;
+}
+.entries .band{
+    display: none;
+    position: absolute;
+    width:100%;
+    height:26px;
+    left:0;
+    top:50%;
+    margin-top:-13px;
+    background-color:#1d64a3;
+    z-index: 0;
+}
+.entry{
+    display: inline-block;
+    margin:0 20px;
+    position: relative;
+    z-index: 2;
+    -webkit-transition:all 0.2s ease-in-out;
+    -moz-transition:all 0.2s ease-in-out;
+    transition:all 0.2s ease-in-out;
+    position: relative;
+}
+/*.entry i{
+    position: absolute;
+    width:100%;
+    height:92%;
+    right:-5px;
+    bottom:-5px;
+    background:red;
+    z-index: 0;
+    background-color:#1d64a3;
+    display: none;
+}*/
+.entry > span{
+    font-size:22px;
+    line-height:2;
+    font-weight: bold;
+    color:#12497c;
+    /*font-family: 'HausaBold';*/
+    /* position: absolute; */
+    left: 0;
+    /* bottom: -56px; */
+    background: #512d62 url('../img/lato-arrow-e-3.png') no-repeat right center;
+    width: 100%;
+    padding: 4px 20px 8px 15px;
+    display: block;
+    color: #fff;
+    text-align: left;
+    font-weight: 300;
+}
+.entry img{
+    position: relative;
+    z-index: 1;
+    display: block;
+    /* border:4px #12497c solid; */
+    height: 100%;
+}
+.entry:hover{
+    /*-webkit-transform: scale(1.05);*/
+    /*-moz-transform: scale(1.05);*/
+    /*transform: scale(1.05);*/
+}
+.entries-container{
+    display: table;
+    height:100%;
+    width:100%;
+    /*background:url('../img/kid-2.jpg') no-repeat left bottom;*/
+    /* position: absolute; */
+}
+.entries-wrapper{
+    display: table-cell;
+    width:100%;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+.home{
+    display: inline-block;
+    margin-bottom:20px;
+    color:#12497c;
+    font-weight: bold;
+    font-size:20px;
+}
+.home i{
+    display: inline-block;
+    width:29px;
+    height:32px;
+    background:url('../img/ic-home-2.png') no-repeat center center;
+}
+.home span{
+    display: inline-block;
+    padding:0 20px;
+    font-size:22px;
+    position: relative;
+    top:5px;
+}
+.home i,
+.home span{
+    display: inline-block;
+    vertical-align: bottom;
+}
+.help{
+    cursor: pointer;
+    margin-top:20px;
+    background-color:#12497c;
+    display: inline-block;
+    color:#fff;
+    font-size:20px;
+    font-weight: bold;
+    padding:9px 45px 6px;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+
+.gateways{
+    text-align: center;
+    position: relative;
+    top: 70px;
+    /*margin-top: 60px;*/
+    width: 100%;
+}
+.gateways .gateway{
+    /*float:left;*/
+    /*width:190px;*/
+    background:#fff;
+    vertical-align: top;
+    display: inline-block;
+    /*height:200px;*/
+    /*border:3px #1d64a3 solid;*/
+    margin:0 10px;
+    padding:1px 12px 1px 50px;
+    border:1px #ccc solid;
+    text-transform: none;
+    cursor: default;
+}
+.gateway.grammar{
+    background:url('../img/lato-grammar-1.png') no-repeat 8px center;
+    padding-left:35px;
+}
+.gateway.storyteller{
+    background: url('../img/lato-book-1.png') no-repeat 8px center;
+    padding-left:50px;
+}
+.gateway.dialogue{
+    background:url('../img/lato-dialogue-1.png') no-repeat 8px center;
+}
+.gateway.vocab{
+    background:url('../img/lato-vocab-1.png') no-repeat 10px center;
+    padding-left:40px;
+}
+.gateway span{
+    position: relative;
+    display: block;
+    /*background: #1d64a3;*/
+    color:#333;
+    font-weight: 300;
+    padding:8px 0 4px;
+    line-height:1;
+    font-size:14px;
+    text-align: left;
+    display: block;
+    height:40px;
+    /*top:80px;*/
+    /*font-weight: bold;*/
+    /*text-transform: capitalize;*/
+
+}
+.gateway:first-child{
+    /*-webkit-box-shadow:3px 3px 0 #1d64a3;*/
+}
+.gateway:nth-child(2){
+    /*-webkit-box-shadow:0px 3px 0 #1d64a3;*/
+}
+.gateway:last-child{
+    /*-webkit-box-shadow:-3px 3px 0 #1d64a3;*/
+}
+.footer{
+    /* background-color:#ef4532; */
+    padding: 0 10px;
+    margin-top: -43px;
+    position: relative;
+    z-index: 9;
+}
+.footer .logo{
+    float: right;
+    display: block;
+    width: 113px;
+    height: 31px;
+    background: url('../img/logo-2.png') no-repeat left top;
+}
+.footer .copy{
+    float:right;
+    color:#fff;
+    display: none;
+}
+.header{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    background: #512d62;
+    padding:15px;
+}
+.header .btn-home:hover,
+.header .btn-home{
+    text-indent: -99999em;
+    width:30px;
+    height:31px;
+    cursor:default;
+    background:transparent url('../img/lato-home-1.png') no-repeat center center!important;
+}
+.panel .back > img,
+.panel .front > img{
+    width:100%;
+    cursor: pointer;
+}
+.panel {
+    margin: 0 auto;
+    position: relative;
+    width: 366px;
+    height: 440px;  
+    position: relative;
+    /*font-size: .8em;*/
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    z-index: 999999;
+    margin: 0 30px;
+}
+.panel.small{
+    width: 270px;
+
+    height: 325px;
+}
+.panel .front > a{
+    position: relative;
+    display: block;
+    background:#512d62 url('../img/lato-arrow-e-3.png') no-repeat right center;;
+    color:#fff;
+    text-align: left;
+    padding:12px 20px;
+    font-size:25px;
+}
+.panel .front,
+.panel .back{
+    width:100%;
+    height:100%;
+}
+.panel .front {
+    position: absolute; 
+    top: 0;
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.panel .back {
+    position: absolute;
+    top: 0;
+    z-index: 800;
+    width: inherit;
+    height: inherit;
+
+    -webkit-transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transform: rotateY(-180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.panel.flip .front{
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+.panel.flip .back{
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+}
+.shown ul{
+    display: block!important;
+}
+.scroll-pane{
+    /* overflow-x:visible; */
+    /* overflow-y:hidden; */
+}
+.links{
+    float:left;
+}
+.links a{
+    color:#512d62;
+    margin:0 10px;
+    text-decoration: underline;
+}
+
+.gateway.dialogue,
+.gateway.storyteller,
+.gateway.grammar,
+.gateway.vocab{
+    position: relative
+}
+.gateway.dialogue:after,
+.gateway.storyteller:after,
+.gateway.grammar:after,
+.gateway.vocab:after{
+    position: absolute;
+    width:102px;
+    height:48px;
+    background:url('../img/comingsoon-1.png') no-repeat left top;
+    content:'';
+    right: -10px;
+    bottom: -26px;
+}
+
+.footer:after,
+.gateways:after{
+    clear:both;
+    content:'';
+    display: block;
+    height:0;
+}
+
+body.small ul.scroll li ul li span:not(.pagenumbers){
+    margin-left: 10px!important;
+    font-size: 16px;
+}
+body.small ul.scroll li ul li span.pagenumbers{
+    font-size:16px;
+}
+@media(max-width:1024px){
+    ul.scroll li ul li span:not(.pagenumbers){
+        margin-left: 10px!important;
+        font-size: 16px;
+    }
+    ul.scroll li ul li span.pagenumbers{
+        font-size:16px;
+    }
+}

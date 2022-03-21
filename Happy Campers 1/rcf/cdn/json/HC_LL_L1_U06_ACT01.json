@@ -1,0 +1,124 @@
+{
+  "id": "ee3a3e99f8e24cdcb0d14d182332f51c",
+  "answers": [
+    {
+      "elm": "complexDroppable_3",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_9"
+    },
+    {
+      "elm": "complexDroppable_4",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_5"
+    },
+    {
+      "elm": "complexDroppable_6",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_2"
+    },
+    {
+      "elm": "complexDroppable_7",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_4"
+    },
+    {
+      "elm": "complexDroppable_8",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_9"
+    },
+    {
+      "elm": "complexDroppable_9",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_13"
+    },
+    {
+      "elm": "complexDroppable_11",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_7"
+    },
+    {
+      "elm": "complexDroppable_12",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_3"
+    },
+    {
+      "elm": "complexDroppable_13",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_13"
+    },
+    {
+      "elm": "complexDroppable_14",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_12"
+    },
+    {
+      "elm": "complexDroppable_16",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_1"
+    },
+    {
+      "elm": "complexDroppable_17",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_8"
+    },
+    {
+      "elm": "complexDroppable_18",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_11"
+    },
+    {
+      "elm": "complexDroppable_20",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_1"
+    },
+    {
+      "elm": "complexDroppable_21",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_4"
+    },
+    {
+      "elm": "complexDroppable_22",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_6"
+    },
+    {
+      "elm": "complexDroppable_23",
+      "type": "simple",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": "cd_1"
+    }
+  ]
+}

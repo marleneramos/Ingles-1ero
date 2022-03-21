@@ -1,0 +1,19 @@
+{
+  "id": "d262df8c23c445ac96c18720845da85c",
+  "answers": [
+    {
+      "elm": "wordsearch_1",
+      "type": "list",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": [
+        "BEIGE",
+        "PURPLE",
+        "ORANGE",
+        "BROWN",
+        "PINK",
+        "GRAY"
+      ]
+    }
+  ]
+}

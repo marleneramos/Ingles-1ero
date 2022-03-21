@@ -1,0 +1,1167 @@
+/* Happy Campers mobile-first styles */
+
+/* PROTOTYPE / RCF VIEWER ONLY */
+.panelsContainer {
+    background-image: url(../images/placeholderSpread.jpg);
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.activityContent {
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* RESET */
+.panelsContainer .viewerButtonBar .buttons .tryAgainButton.inMarking,
+.main span.mark.correct,
+.main span.mark.wrong {
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    animation: none !important;
+}
+
+/* Viewer only, to simulate PPK */
+.rcfContentContainer .activity {
+    overflow: auto;
+    overflow-x: hidden;
+}
+.rcfContentContainer .activityContainer {
+    width: 1000px;
+}
+
+/* PROTOTYPE / END RCF VIEWER ONLY */
+
+
+/************************** BASE **************************/
+
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/Muli-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/Muli-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/Muli-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/Muli-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/Muli-Bold.ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('../fonts/Muli-Bold-Italic.ttf');
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* FONTS */
+.activity {
+    /*font-weight: 300;*/
+}
+.activity,
+.activity input,
+.activity textarea {
+    font-family: 'Muli', Verdana, Arial, sans-serif;
+}
+.rubric {
+    /*font-weight: 400;*/
+    font-size: 1.95em;
+    line-height: 45px;
+}
+.main {
+    font-size: 1.3em;
+    /*line-height: 200%;*/
+}
+.main li p {
+    line-height: 200%;
+}
+
+
+/* MARKS */
+/*.typeinGroup .mark {
+    right: -0.5em;
+    bottom: 0.65em;
+}*/
+/*.radioItemSelect .radio .mark*/
+.checkboxItemSelect .checkbox .mark,
+.radioItemSelect .radio .mark {
+    right: -0.5em;
+    top: -0.5em;
+    bottom: auto;
+}
+.mm_itemSelectSeparator .radioItemSelect .radio .mark {
+    right: -0.9em;
+    top: -0.9em;
+}
+.mm_marksInside .radioItemSelect .radio .mark {
+    right: 0.4em;
+    top: 0.4em;
+}
+.category .dragItem .mark {
+    right: -0.45em;
+    top: -0.45em;
+    bottom: auto;
+}
+.complexDroppable .mark {
+    top: -1em;
+    right: -0.9em;
+}
+
+
+
+
+/************************** LAYOUT **************************/
+
+/* ACTIVITY / CONTAINER */
+.activityContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.activity {
+    border: none;
+    padding: 20px 30px 20px 6.75em;
+    height: 640px;
+    /*height: 616px; /* 656 - 20 - 20 */
+}
+
+/* RUBRIC */
+.rubricContainer {
+    background-repeat: no-repeat;
+    /*background-position: 0 50%;*/
+    background-position: 0 1.1em;
+}
+.rubric {
+    border: none;
+    background: none;
+    padding: 0.5em 0;
+}
+.rubric .mm_skill,
+.main h2 {
+    color: #DB5C1E;
+    font-weight: 700;
+}
+
+/* MAIN */
+.main {
+    padding: 0;
+}
+.rubricContainer,
+.main {
+    padding-left: 48px; /* rubric number width + 8px */
+}
+
+
+/* FLOATING BLOCKS */
+.mm_left {
+    display: inline;
+    float: left;
+    margin-bottom: 0;
+}
+.mm_right {
+    display: inline;
+    float: right;
+}
+
+/* WORDBOX */
+.mm_wordBox,
+.wordBox {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+
+
+/************************** MODULES **************************/
+
+/*** MARKED COMPONENENTS ***/
+
+/* WORDBOX - WORDSEARCH */
+.wordBox,
+.mm_wordBox,
+.rcfWordSearchGridChosenWords .wordSearchWords {
+    border: 0;
+    background: none;
+    background-color: #F0F2B8;
+    padding: 0.75em;
+}
+.wordBox {
+    padding-bottom: 0.25em;
+}
+.wordBox ul,
+.rcfWordSearchGridChosenWords .wordSearchWords ul,
+.rcfWordSearchGridChosenWords .wordSearchWords ul li {
+    line-height: 1em;
+}
+.wordBox li.dragItem,
+.dragTarget,
+.rcfWordSearchGridChosenWords .wordSearchWords li .wordSearchSelection,
+.typeinGroup input.typeinGroup  {
+    background-color: #fff;
+    border-color: #333;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+.rcfWordSearchGridChosenWords .wordSearchWords li .wordSearchSelection {
+    background-color: #fff;
+    border-color: #333;
+}
+/* link to remove word from box */
+.rcfWordSearchGridChosenWords .wordSearchWords li .wordSearchSelection a {
+    font-weight: 400;
+    padding-right: 0.3em;
+    color: #999;
+}
+
+/* TYPE IN / TYPE IN GROUP */
+.typeinGroup {
+    letter-spacing: 0;
+    word-spacing: 0.3em;
+}
+.typein input.text,
+.typeinGroup input.typeinGroup {
+    /*color: #000;*/
+    background-color: #fff;
+    border: 1px solid #bbb;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    -moz-box-shadow: inset 1px 1px 2px #ccc;
+    -webkit-box-shadow: inset 1px 1px 2px #ccc;
+    box-shadow: inset 1px 1px 2px #ccc;
+    border-radius: 6px;
+    word-spacing: 0;
+    text-align: center;
+}
+/*.typein input.text:focus,
+.typeinGroup input.typeinGroup:focus {
+    box-shadow: 0 0 5px #44beaa;
+    border: 1px solid #44beaa;
+    background-color: #f5fcfb;
+}
+.example.typein input[type=text] {
+    border: 1px solid #dfedfa;
+    box-shadow: none;
+    background-color: red;
+}
+.example.typein input[type=text]:focus {
+    box-shadow: none;
+    border: 1px solid #ccc;
+}*/
+
+.typein input.text:focus,
+.typeinGroup input.typeinGroup:focus,
+.typein input.populated,
+.typeinGroup input.populated {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #DB5C1E;
+    border: 1px solid #DB5C1E;
+}
+
+
+/* DROPPABLE / ORDERING / CATEGORISE */
+.wordBox li.dragItem, .dragTarget,
+.dragTarget.populated,
+ul.ordering li, ul.complexOrdering li,
+.category li.dragItem {
+    border: 1px solid #999;
+    background-color: #FFF;
+    text-align: center;
+    border-radius: 9px;
+    /*font-weight: 700;*/
+}
+.wordBox li.dragItem,
+ul.ordering li, ul.complexOrdering li,
+.dragTarget.populated,
+.category li.dragItem {
+    background-color: #FFF;
+    box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
+    /*vertical-align: 2px;*/
+}
+ul.ordering li.fixed, ul.complexOrdering li.fixed {
+    box-shadow: none;
+    border: none;
+}
+
+ul.ordering li.suffix,
+ul.complexOrdering li.suffix {
+    padding: 0;
+}
+
+.ordering {
+    vertical-align: middle;
+}
+.ordering.vertical {
+    line-height: 1.4;
+}
+
+.wordBox li.dragItem {
+    margin-right: 0.85em;
+    margin-bottom: 0.5em;
+}
+.dragTarget {
+    border-color: #888;
+    background-color: #eee;
+    box-shadow: none;
+    /*color: #DB5C1E;*/
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    /*min-height: 32px;*/
+    min-height: 33px;
+    vertical-align: middle;
+}
+.dragTarget.populated {
+    border-color: #DB5C1E;
+    box-shadow: 0 0 5px #DB5C1E;
+}
+.dragTarget.populated.example,
+.dragTarget.example {
+    border-color: #888;
+    box-shadow: none;
+}
+.category li.dragItem {
+    /*color: #DB5C1E;*/
+    color: #000;
+}
+
+.categorise .dropTarget li.dragItem {
+    border-color: #DB5C1E;
+    box-shadow: 0 0 5px #DB5C1E;
+}
+
+/* click and stick / item selected */
+li.dragItem.selected, .dragTarget.selected, .wordBox li.dragItem.selected,
+ul.ordering li.selected, ul.complexOrdering li.selected,
+ul.ordering li.ui-sortable-helper, ul.complexOrdering li.ui-sortable-helper,
+ul.ordering:not(.example) li:not(.fixed):hover, ul.complexOrdering:not(.example) li:not(.fixed):hover {
+    background-color: #DB5C1E;
+    /*border: 1px solid #DB5C1E;*/
+    border-color: #DB5C1E;
+    color: #fff;
+}
+/*ul.ordering li.fixed:hover, ul.complexOrdering li.fixed:hover {
+    background-color: #fff;
+    border: none;
+    color: #000;
+}*/
+
+
+/* CATEGORISE */
+.category .catName {
+    background-color: #E3F3EF;
+    border-bottom: 3px solid #B3DED6;
+}
+.category {
+    border: 3px solid #B3DED6;
+}
+.category .dropTarget {
+    background-color: #fff;
+}
+.categorise table {
+    margin: 0;
+}
+.categorise .dropTarget .dragItem {
+    line-height: 1;
+    padding: 2px;
+}
+.category .example {
+    padding: 2px;
+    line-height: 1;
+    border: 1px solid #999;
+    background-color: #EEE;
+    border-radius: 9px;
+    box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.5);
+}
+
+/* WORDSEARCH */
+.rcfWordSearchGrid,
+.wordSearchWords {
+    text-transform: lowercase;
+}
+.rcfWordSearchGrid table td {
+    border-width: 2px;
+    border-color: #DB5C1E;
+    border-color: #CACACA;
+    font-size: 1.2em;
+    padding: 0.2em;
+}
+.mobile .rcfWordSearchGrid .ws-start, .wordSearchContainer[data-draggable='n'] .rcfWordSearchGrid .ws-start,
+.rcfWordSearchGrid .ws-glowing, .rcfWordSearchGrid .ws-selected, .rcfWordSearchGrid .ws-highlight {
+    background: none;
+    animation-name: none;
+    -webkit-animation-name: none;
+    color: #FFF;
+    background-color: #DB5C1E;
+    border-color: #DB5C1E;
+}
+.rcfWordSearchGridChosenWords .wordSearchWords li .wordSearchSelection {
+    border: 1px solid #999;
+}
+.rcfWordSearchGridChosenWords .wordSearchWords li .wordSearchSelection a:hover {
+    color: #DB5C1E;
+}
+
+
+
+/* RADIO / CHECKBOX */
+.mobile .radioItemSelect.horizontal .selectable,
+.mobile .checkboxItemSelect.horizontal .selectable {
+    display: inline-block;
+}
+.radioItemSelect.horizontal,
+.checkboxItemSelect.horizontal {
+    margin-right: 0.1em;
+    /*font-weight: 700;*/
+    font-weight: 400;
+}
+.radioItemSelect .selectable, .checkboxItemSelect .selectable {
+    padding: 0.1em 0.3em;
+}
+li .radioItemSelect .selectable {
+    padding: 0 0.3em;
+    line-height: 150%;
+}
+.radioItemSelect .selectable, .checkboxItemSelect .selectable {
+    /* padding:  0.2em 0.5em; */
+    border-radius: 8px !important;
+    background-color: #fff;
+    position: relative;
+}
+.radioItemSelect.horizontal .selectable, .checkboxItemSelect.horizontal .selectable {
+    margin-right: 0.5em;
+}
+.radioItemSelect.horizontal .selectable:last-child, 
+.checkboxItemSelect.horizontal .selectable:last-child {
+    margin-right: 0;
+}
+.radioItemSelect.vertical .selectable, .checkboxItemSelect.vertical .selectable {
+    margin-bottom: 0.3em;
+}
+.radioItemSelect.vertical .selectable:last-child, 
+.checkboxItemSelect.vertical .selectable:last-child {
+    margin-bottom: 0;
+}
+/* default - colour */
+.radioItemSelect .selectable, .checkboxItemSelect .selectable,
+.desktop .radioItemSelect.horizontal .selectable:first-child, .desktop .checkboxItemSelect.horizontal .selectable:first-child,
+.desktop .radioItemSelect.horizontal .selectable, .desktop .checkboxItemSelect.horizontal .selectable,
+.mobile .radioItemSelect.horizontal .selectable, .mobile .checkboxItemSelect.horizontal .selectable, 
+.mobile .radioItemSelect.horizontal .selectable:first-child,
+.desktop .radioItemSelect.vertical .selectable:first-child, .desktop .checkboxItemSelect.vertical .selectable:first-child,
+.desktop .radioItemSelect.vertical .selectable, .desktop .checkboxItemSelect.vertical .selectable,
+.mobile .radioItemSelect.vertical .selectable, .mobile .checkboxItemSelect.vertical .selectable, 
+.mobile .radioItemSelect.vertical .selectable:first-child {
+    border: 1px solid #999;
+}
+.radioItemSelect .selectable.selected, .checkboxItemSelect .selectable.selected {
+    position: relative;
+}
+/* selected - colour */
+.desktop .radioItemSelect.horizontal .selectable.selected:first-child, .desktop .checkboxItemSelect.horizontal .selectable.selected:first-child,
+.desktop .radioItemSelect.horizontal .selectable.selected, .desktop .checkboxItemSelect.horizontal .selectable.selected,
+.mobile .radioItemSelect.horizontal .selectable.selected, .mobile .checkboxItemSelect.horizontal .selectable.selected,
+.desktop .radioItemSelect.vertical .selectable.selected:first-child, .desktop .checkboxItemSelect.vertical .selectable.selected:first-child,
+.desktop .radioItemSelect.vertical .selectable.selected, .desktop .checkboxItemSelect.vertical .selectable.selected,
+.mobile .radioItemSelect.vertical .selectable.selected, .mobile .checkboxItemSelect.vertical .selectable.selected,
+.radioItemSelect .selectable.selected, .checkboxItemSelect .selectable.selected {
+    background-color: #DB5C1E;
+    border: 1px solid #DB5C1E;
+    color: #fff;
+}
+
+/* MATCHING */
+.matchingContainer {
+    position: relative;
+}
+/*.matchingContainer .matchItems {
+    float: left;
+}
+.matchingContainer .matchTargets {
+    float: right;
+}*/
+.matchItems > div, .matchTargets > div {
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 19px #aaa;
+    margin-top: 10px;
+    border: 1px solid #eee;
+}
+.horizontal .matchItems > div, .horizontal .matchTargets > div {
+    margin-top: 0;
+    margin-right: 1em;
+}
+.matchItems > div:first-child, .matchTargets > div:first-child {
+    margin-top: 0;
+}
+.matchingContainer .matchItemContainer,
+.matchingContainer .matchTargetContainer {
+    cursor: pointer;
+    background-color: #fff;
+}
+.selected {
+    background-color: #DB5C1E;
+}
+.matchTargetContainer ._jsPlumb_endpoint {
+    border-radius: 50%;
+}
+.matchItems .matchItem.selected {
+    animation-name: none;
+    -webkit-animation-name: none;
+}
+
+/* path */
+.matchingContainer svg.matchTarget path,
+.matchingContainer svg.showIncorrectAnswer path,
+.matchingContainer svg.showCorrectAnswer path,
+.matchingContainer svg.userAnswer path {
+    stroke: #DB5C1E;
+    stroke-width: 7px;
+}
+.matchingContainer svg.showExampleAnswer path {
+    stroke-linecap: round;
+    stroke-dasharray: 1, 20;
+    stroke-width: 10px;
+}
+.matchingContainer svg.showExampleAnswer path {
+    stroke: #BBB;
+}
+.matchingContainer .matchItemContainer.example,
+.matchingContainer .matchTargetContainer.example {
+    background-color: #eee;
+}
+._jsPlumb_endpoint rect,
+._jsPlumb_endpoint circle {
+    fill: #1D1D1B;
+}
+
+/* CROSSWORD */
+table.crossword .example input.editing,
+table.crossword input.editing:focus,
+table.crossword input.editing {
+    background-color: #DB5C1E;
+    color: #fff;
+}
+.rcfCrossword {
+    float: left;
+    width: 50%;
+}
+table.crossword {
+    background: transparent;
+    border: 0;
+}
+table.crossword {
+  border-collapse: collapse;
+  border-spacing: 4px;
+}
+table.crossword td.word {
+  border: 1px solid #99D6CB;
+  line-height: 20px;
+}
+table.crossword td .clueNumber {
+    color: #D4713A;
+    top: -4px;
+    font-size: 0.6em;
+    left: -1px;
+    padding-left: 0px;
+}
+table.crossword input {
+    height: 24px;
+    padding-top: 0;
+}
+.crosswordClueContainer .across, .crosswordClueContainer .down {
+    width: 25%;
+}
+
+.crosswordClueContainer h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.crosswordClueContainer li.selected, .crosswordClueContainer li:hover {
+    background: transparent;
+    animation: none;
+    -webkit-animation: none;
+}
+.crosswordClueContainer li img {
+    border: 3px solid #FFF;
+}
+.crosswordClueContainer li.selected img, .crosswordClueContainer li:hover img {
+    border-color: #FFDA0C;
+    animation: none;
+    -webkit-animation: none;
+}
+
+/* Wordsnake styles */
+
+.wordSnakeContainer .wordSnake li.letter {
+    border: none;
+    border-radius: 3px;
+}
+
+.mobile .wordSnake[selecting='y'] .letter:not(.rangeMade):not(.example):not(.ui-selecting) {
+    background: none;
+}
+
+
+/*** UNMARKED COMPONENENTS ***/
+
+/* AUDIO */
+.audio {
+    font-weight: 400;
+}
+.inlinePlayer a {
+    width: 40px;
+    height: 33px;
+    cursor: pointer;
+    border-radius: 9px;
+}
+.inlinePlayer a.audioPlayButton:active,
+.inlinePlayer a.audioPlayButton,
+.inlinePlayer a.audioPauseButton:active,
+.inlinePlayer a.audioPauseButton {
+    background-color: #ABCB4F;
+    background-repeat: no-repeat;
+    background-position: top left;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.inlinePlayer a.audioPlayButton:active,
+.inlinePlayer a.audioPlayButton {
+    background-image: url("../images/small_play.png");
+}
+.inlinePlayer a.audioPauseButton:active,
+.inlinePlayer a.audioPauseButton {
+    background-image: url("../images/small_stop.png");
+}
+
+a.audioPlayButton, a.videoPlayButton {
+    background: url("../images/large_play.png");
+    top: 5px;
+}
+a.audioStopButton, a.videoStopButton {
+    background: url("../images/large_stop.png");
+    top: 5px;
+}
+a.audioScriptButton {
+    background: url("../images/large_script.png");
+    top: 5px;
+}
+a.audioPauseButton, a.videoPauseButton {
+    background: url("../images/large_pause.png");
+    top: 5px;
+}
+
+.audioMuteButtonContainer {
+    display: none;
+}
+
+.audioContainer.large .audioInterface {
+    width: 230px;
+    height: 45px;
+}
+.audio.large .audioInterface, 
+.audio.medium .audioInterface, 
+.videoPlayerInterface {
+    background: none;
+    background-color: #ABCB4F;
+    border: none;
+    border-radius: 14px;
+    color: #FFF;
+}
+.audioSeekBar, .videoSeekBar {
+    background-color: #D2E3A0;
+    /*height: 50%;*/
+}
+.audioProgress, .videoProgress {
+    background-color: #fff;
+    height: 10px;
+    top: 15px;
+}
+.audioPlayBar, .videoPlayBar {
+    background-color: #FCF3EC;
+}
+.audioCurrentTime, .audioDuration {
+    top: 29px;
+}
+.audio.large .audioScript {
+    width: 230px;
+}
+.audioScript {
+    border: 2px solid #ABCB4F;
+    top: 50px;
+    background-color: #FFF;
+    border-radius: 14px;
+}
+.script .playing {
+    background-color: #ABCB4F;
+}
+
+/* AudioScript ScrollBard*/
+.audioContainer ::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+.audioContainer ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+ 
+/* Handle */
+.audioContainer ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(204,204,204,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.audioContainer ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(204,204,204,0.4); 
+}
+
+/* TABLE */
+.main th {
+    background-color: #E3F3EF;
+    color: #50BCAA;
+}
+.main td, th {
+    border: 3px solid #B3DED6;
+}
+.main tr.odd td,
+.main tr.even td {
+    background-color: #fff;
+}
+
+
+/*** CONTENT STYLING ***/
+
+/* MATCHING SMALL */
+.mm_matchingSmall .matchingContainer {
+    width: 55%;
+}
+
+/* MATCHING WITH IMAGES AS TARGETS */
+.mm_matchingImages .matchingContainer.vertical {
+    width: 80%;
+}
+.mm_matchingImages .matchingContainer img {
+    width: 100px;
+}
+.mm_matchingImages .matchTarget {
+    padding: 5px 0;
+}
+.mm_matchingImages .matchTargets > div {
+    box-shadow: none;
+    border: none;
+}
+.mm_matchingImages .matchTargetContainer.example {
+    background: none;
+}
+.mm_matchingImages .vertical .matchTargetContainer:nth-child(even) {
+    margin-right: 100px;
+}
+.mm_matchingImages .vertical .matchTargetContainer:nth-child(odd) {
+    margin-left: 100px;
+}
+.mm_matchingImagesOrder2 .vertical .matchTargetContainer:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 100px;
+}
+.mm_matchingImagesOrder2 .vertical .matchTargetContainer:nth-child(even) {
+    margin-right: 0;
+    margin-left: 100px;
+}
+
+/* SPACING FOR 3 MATCH ITEMS */
+.mm_matching3 .vertical .matchItems > div {
+    margin-top: 5em;
+}
+.mm_matching3 .vertical .matchItems > div:first-child {
+    margin-top: 0;
+}
+.mm_matching3 .horizontal .matchTargets > div {
+    /*margin: 0 3.3em;*/
+}
+/* SPACING FOR 4 MATCH ITEMS */
+.mm_matching4 .vertical .matchItems > div {
+    margin-top: 2.5em;
+}
+.mm_matching4 .vertical .matchItems > div:first-child {
+    margin-top: 0;
+}
+
+/* RADIO QUESTION */
+.mm_radioQuestion li {
+    clear: both;
+}
+.mm_radioQuestion p {
+    display: inline;
+}
+.mm_radioQuestion .radioItemSelect {
+    float: right;
+}
+/* ITEM SELECT WITH SLASH AS SEPARATOR */
+.mm_itemSelectSeparator .radioItemSelect.horizontal .selectable:after {
+    content: "/";
+    position: absolute;
+    top: 0;
+    right: -14px;
+    color: #000;
+}
+.mm_itemSelectSeparator .radioItemSelect.horizontal .selectable {
+    margin-right: 1em;
+}
+.mm_itemSelectSeparator .radioItemSelect.horizontal .selectable:last-child:after {
+    content: "";
+    position: relative;
+}
+.mm_itemSelectSeparator .radioItemSelect.horizontal .selectable:last-child {
+    margin-right: 0;
+}
+
+/* SELECT IMAGES */
+.mm_selectImages li .radioItemSelect .selectable,
+.mm_selectImages .checkboxItemSelect .selectable {
+    padding: 0.3em;
+}
+.mm_selectImages li .radioItemSelect img,
+.mm_selectImages .checkboxItemSelect img  {
+    border-radius: 0.2em;
+}
+
+.mm_selectImages .radioItemSelect.horizontal,
+.mm_selectImages .checkboxItemSelect.horizontal {
+    margin-right: 0;
+}
+
+
+/* SPEECH BUBBLES */
+.mm_speechBubbles .mm_bubble,
+.mm_speechBubbles .matchItem {
+    position: relative;
+    background-color: #fff;
+    border-radius: 0.5em;
+}
+.mm_speechBubbles .mm_bubble {
+    padding: 0.275em 0.475em;
+    margin-bottom: 20px;
+    border: 2px solid #aaa;
+}
+.mm_speechBubbles .mm_bubble:before,
+.mm_speechBubbles .matchItem:before {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 22px;
+    border-width: 16px 10px 0;
+    border-style: solid;
+    border-color: #aaa transparent;
+    display: block;
+    width: 0;
+}
+.mm_speechBubbles .matchItem:before {
+    border-color: #fff transparent;
+}
+/*.mm_speechBubbles .matchItem:after,*/
+.mm_speechBubbles .mm_bubble:after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 25px;
+    border-width: 13px 7px 0;
+    border-style: solid;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+}
+.mm_speechBubbles .matchItem.selected {
+    background-color: #DB5C1E;
+    border-color: #DB5C1E;
+}
+.mm_speechBubbles .matchItem.selected:before,
+.mm_speechBubbles .matchItem.selected:after {
+    border-color: #DB5C1E transparent;
+}
+
+
+/* FLEXBOX */
+.mm_flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-flow: row-wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-around; 
+    justify-content: space-around;
+    text-align: center;
+}
+.mm_flex .wordBox {
+    width: 100%;
+}
+.mm_flex > .block {
+    min-width: 140px;
+    width: 23%;
+    margin: 0;
+    margin: auto;
+}
+.mm_3colFlex > .block {
+    width: 30%;
+}
+.mm_2colFlex > .block {
+    width: 40%;
+}
+
+.mm_float {
+    width: 50%;
+    float: left;
+}
+
+/* FLASHCARDS */
+.mm_flashcards {
+    text-align: center;
+}
+/* CAROUSEL */
+.mm_flashcards .rcfCarousel.simple.owl-carousel {
+    border: none;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    width: auto;
+}
+.mm_flashcards .owl-item > .block {
+    margin: 0 auto;
+    margin-bottom: 0.875em;
+    width: 100%;
+}
+
+/* IMAGE FLASHCARDS */
+.mm_flashcards .owl-carousel .owl-item img {
+    display: inline-block;
+    margin-bottom: 1em;
+    width: initial;
+}
+
+/* NAV DOTS */
+/* TODO: make arrows smaller + check how is it on other tools */
+
+/* BUTTON */
+.mm_flashcards .mm_action {
+    margin-right: 5px; /* to align with main card content */
+}
+.mm_flashcards .mm_button {
+    position: relative;
+    cursor: pointer;
+    line-height: 1;
+    background-color: #512d62;
+    border-radius: 7px;
+    color: #FFF;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid #512d62;
+}
+
+/* DISPLAY */
+.mm_flashcards .owl-carousel .owl-item img:first-child,
+.mm_flashcards .owl-carousel .owl-item img:nth-child(2) {
+    display: none;
+}
+.activity:not(.tr_showDialogue1) .mm_flashcards .owl-carousel .owl-item img:first-child {
+    display: inline-block;
+}
+
+/* TRIGGERED */
+.activity.tr_showDialogue1 .mm_flashcards .owl-carousel .owl-item img:nth-child(2) {
+    display: inline-block;
+}
+.activity.tr_showDialogue1 .mm_flashcards .owl-carousel .owl-item img:first-child {
+    display: none;
+}
+/* dirty hack to simulate button */
+.tr_showDialogue1 .mm_flashcards .mm_button:before {
+    position: absolute;
+    content: "Hide text";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.5em;
+    background-color: #512d62;
+    border-radius: 7px;
+}
+
+/* AUDIO FLASHCARDS */
+.mm_flashcards .inlinePlayer a.audioPlayButton, 
+.mm_flashcards .inlinePlayer a.audioPauseButton:active, 
+.mm_flashcards .inlinePlayer a.audioPauseButton {
+    background-position: center center;
+}
+.mm_flashcards .inlinePlayer a {
+    width: 55px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 9px;
+}
+
+/* CAROUSEL BUTTONS FLASHCARDS */
+.mm_flashcards .rcfCarousel .navLeftButton, .rcfCarousel .navRightButton {
+    background: none;
+    top: 40%;
+}
+.mm_flashcards .rcfCarousel .navLeftButton:hover,
+.mm_flashcards .rcfCarousel .navRightButton:hover {
+    background: none;
+}
+.mm_flashcards .rcfCarousel .navLeftButton:before {
+    content: url("../images/rs-arrow-3.png");
+}
+.mm_flashcards .rcfCarousel .navRightButton:before {
+    content: url("../images/rs-arrow-2.png");
+}
+.mm_flashcards .rcfCarousel.owl-theme .owl-dots .owl-dot.active span {
+    box-shadow: none;
+}
+
+
+/*** USEFUL ***/
+
+.mm_dragTargetOneChar .dragTarget,
+.mm_dragTargetOneChar td .dragTarget {
+    min-width: 0.9em;
+    width: auto;
+}
+.mm_dragTargetOneChar .dragImageTarget,
+.mm_dragTargetOneChar td .dragImageTarget {
+    min-width: 120px;
+}
+
+.mm_smallerTargets .dragTarget {
+    min-width: 3em;
+    width: auto;
+}
+
+/* LIST PRIMARY */
+.mm_listPrimary > ol > li,
+.mm_listPrimary > ul > li {
+    float: left;
+    width: 50%;
+    display: list-item;
+}
+.mm_listPrimary > ul > li {
+    margin-bottom: 0.875em;
+}
+.mm_listPrimary img {
+    width: 115px;
+}
+/* IMAGE */
+.mm_imagesWidthAuto img {
+    width: auto;
+}
+.mm_imageRight li {
+    clear: both;
+}
+.mm_imageRoundCorners img {
+    border-radius: 0.75em;
+}
+
+/* TABLE */
+.mm_tableFullWidth table {
+    width: 100%;
+}
+
+.mm_table2colEqual td {
+    width: 50%;
+}
+
+.mm_highlight {
+    color: #DB5C1E;
+}
+
+.mm_typeinGroupLarger input.typeinGroup {
+    padding-left: 5px;   
+    padding-right: 5px;   
+}
+
+/* padding around images */
+.mm_imagesSpacing img {
+    padding: 10px;
+}
+.mm_imagesSpacing.mm_listPrimary img {
+    width: 130px;
+}
+
+/* radio */
+.mm_radioSpacing {
+    text-align: center;
+}
+.mm_radioSpacing .radioItemSelect .radio:first-child {
+    margin-right: 5em;
+}
+
+/* indent numbering for matching */
+.mm_indentNumbering .matchItem {
+    text-indent: -25px;
+    padding-left: 45px;
+}
+
+
+/************************** THEME **************************/
+
+/* EXAMPLE */
+.mm_example, .example {
+    font-style: normal;
+    color: #8C8287;
+}
+.example,
+.matchingContainer .example, 
+.example .selectable {
+    cursor: default;
+}
+.example.typein input[type=text]:focus,
+.example.typeinGroup input[type=text]:focus {
+    box-shadow: none;
+    border-color: #bbb;
+    box-shadow: inset 1px 1px 2px #ccc;
+}
+.example.typein input[type=text]:focus,
+.example.typeinGroup input[type=text]:focus,
+.typeinGroup input.example,
+.typein input.example,
+.example .radio,
+.ordering .example li, .complexOrdering .example li {
+    background-color: #eee;
+}
+.dragTarget.example {
+    background-color: #f5f5f5;
+}
+
+/* SONG */
+.mm_song .rubric,
+.mm_audio .rubric {
+    background-repeat: no-repeat;
+    padding-left: 50px; 
+    background-position: top left;
+    background-position: 0 0.4em; 
+}

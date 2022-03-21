@@ -1,0 +1,19 @@
+{
+  "id": "731dd17258c54b9ab602679c2faa16f2",
+  "answers": [
+    {
+      "elm": "wsg_1",
+      "type": "list",
+      "markType": "item",
+      "markedBy": "engine",
+      "value": [
+        "GRANDPA",
+        "GRANDMA",
+        "BROTHER",
+        "SISTER",
+        "DAD",
+        "MOM"
+      ]
+    }
+  ]
+}

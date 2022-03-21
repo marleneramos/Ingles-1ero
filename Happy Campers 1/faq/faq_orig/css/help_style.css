@@ -1,0 +1,221 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Page styles 
+-----------------------------------------------------------------------------------   */
+
+html, body {
+	font-family: arial, helvetica, 'sans serif';
+	font-size: 15px;
+	font-style: normal;
+	font-weight: normal;
+	box-sizing: border-box;
+	background-color: #eee;
+	line-height: 1.7em
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+i, em {
+	font-style: italic;
+}
+
+.mm_content {
+	margin: 0 auto;
+	/*padding: 2em;*/
+	text-align: left;
+	max-width: 1000px;
+	background-color: #fff;
+	padding: 1.5em 0 2.5em;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 1.8em;
+	font-weight: normal;
+}
+
+header{
+	border-bottom: 1px solid #4f81bd;
+	margin: 0 0 2em;
+	padding: 2em;
+
+}
+
+.mm_pageNav,
+.mm_pagecontent {
+	margin: 0 0 0.8em;
+	padding: 0.5em 2em 1em;
+}
+
+.mm_pagecontent > :last-child {
+	margin-bottom: 0em;
+}
+
+.mm_pageNav h1 {
+	margin: 0 0 0.8em;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.mm_pageNav ul {
+	list-style: none;
+	margin: 0;
+}
+
+.mm_pageNav a {
+	display: block;
+	font-weight: bold;
+	margin: 0 0 0.5em;
+	padding: 0 0 0.5em;
+	border-bottom: 1px dotted #ccc;
+	color: rgb(50,50,155);
+}
+
+.mm_pageNav ul ul a {
+	padding-left: 1em;
+	font-weight: normal;
+}
+
+
+
+h2 {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin: 0 0 0.8em;
+	/*padding: 0.5em 0 1em;*/
+}
+
+h3 {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0 0 0.8em;
+	/*padding: 0.5em 0 1em;*/
+}
+
+p,
+ul {
+	margin: 0 0 0.8em;
+	/*padding: 0.5em 0 1em;*/
+}
+
+ul {
+	list-style: disc;
+	list-style-position: outside;
+	margin-left: 1.5em;
+}
+
+/*.mm_pageSubNav li{
+	list-style-position: outside;
+	padding-left: 2em;
+}*/
+
+.mm_pageNav ul ul ul a {
+padding-left: 2em;
+font-weight: normal;
+}
+
+
+li {
+}
+
+p + h2,
+p + h3,
+ul + h2,
+ul + h3,
+table + h2,
+table + h3 {
+	margin-top: 1.5em;
+}
+
+.mm_what {
+	text-transform: uppercase;
+}
+
+figure {
+	/*width: 100%;*/
+	text-align: center;
+	margin: 0 0 0.8em;
+
+}
+
+.mm_left {
+	text-align: left;
+}
+
+.mm_left + p {
+	clear: left;
+}
+
+.mm_left img {
+	float: left;
+	clear: left;
+	vertical-align: text-top;
+	margin: 0 1em 0 0;
+}
+
+td {
+	border: 1px solid black;
+	vertical-align: top;
+	padding: 0.25em 0.75em;
+}
+
+td p {
+	margin-bottom: 0.2em;
+}
+
+p > img {
+	vertical-align: text-top;
+}
+
+
+
+

@@ -1,0 +1,3379 @@
+*{
+    box-sizing: border-box;
+    outline:none!important;
+}
+html{
+    overflow: hidden;
+}
+body,html{
+    position: relative;
+    height:100%;
+    min-height: 100%;
+    padding:0;
+    margin:0;
+    min-width:1024px;
+    min-height:768px;
+    background-color:transparent;
+}
+a:hover,
+a{
+    text-decoration: none;
+}
+body{
+    -webkit-font-smoothing:antialiased;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7em;
+    display: flex;
+    -webkit-user-select: none;
+}
+#tools,#pages,#menu,#menu-center{
+    z-index: 90;
+}
+#mediaTools{
+    z-index: 2;
+}
+#tools{
+    left:0;
+    z-index: 90!important;
+    pointer-events: none;
+}
+#tools.shown{
+    background-repeat:no-repeat;
+    background-position:center 47px;
+}
+#tools .btn {
+	pointer-events: auto;
+}
+#mediaTools,
+#tools{
+    position: fixed;
+    top:0;
+    width:134px;    
+}
+#tools{
+    height: 100%;
+    padding-top:80px;
+    background:#fff;
+    z-index: 1;
+}
+#ken{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:url('../img/ken.gif') no-repeat center center;
+    z-index: 9999;
+}
+#kenBg{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:#fff;
+    z-index: 999;
+    -webkit-animation: explode 0.2s infinite;
+}
+@-webkit-keyframes explode {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+body.left-handed #tools{
+     margin-right:-6px; 
+}
+body.left-handed .btn-epv-wrapper{
+    float:right;
+    padding-right:0;
+}
+body.left-handed .btn-epv-wrapper,
+body.left-handed .page-turner,
+body.left-handed .btn-menu{
+    float:right!important;
+    margin-left:33px!important;
+    margin-top:0;
+}
+body.left-handed #menu{
+    /* margin-right: -5px; */
+}
+#menu-center,
+#menu{
+    position: fixed;
+    left:0;
+    bottom:10px;
+}
+#menu-center .btn,
+#menu .btn{
+    margin-bottom:0;
+    margin-top:0;
+}
+#menu-center .btn-toggle{
+    display: inline-block;
+    margin-right:30px;
+}
+.btn-toggle .btn{
+    margin-left:-5px;
+    margin-right:0;
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+    border:1px #12487b solid;
+    color:#12487b;
+    background:#fff;
+}
+.btn-toggle .btn-active{
+    background:#12487b;
+    color:#fff;
+    text-decoration: underline;
+}
+.btn-toggle .btn:first-child{
+    -webkit-border-bottom-left-radius: 0.3em!important;
+    -webkit-border-top-left-radius: 0.3em!important;
+}
+.btn-toggle .btn:last-child{
+    -webkit-border-bottom-right-radius: 0.3em!important;
+    -webkit-border-top-right-radius: 0.3em!important;
+}
+.btn-toggle .btn{
+    text-align: center;
+    padding-left:11px;
+}
+
+#ebookselector{
+    position: relative;
+    left:0;
+}
+#menu-center{
+    left:50%;
+    margin-left:-189px;
+}
+#menu-center .btn{
+    font-size: 20px;
+    line-height: 1.6;
+}
+.btn{
+    display: inline-block;
+    padding:5px 7px 3px 36px;
+    color:#fff;
+    font-weight: bold;
+    margin:5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    -webkit-transition:background-color 0.2s ease-in-out;
+    -moz-transition:background-color 0.2s ease-in-out;
+    transition:background-color 0.2s ease-in-out;
+}
+.left-handed .tools-container .btn{
+    background-position: 104px center;
+    padding:5px 36px 3px 7px;
+}
+.btn span{
+    font-size:14px;
+    padding-top:1px;
+}
+.btn-header span{
+    font-size:21px;
+    padding-top:4px;
+    padding-bottom:0px;
+}
+.btn-menu,
+.btn-container .btn:not(.btn-home){
+    position: relative;
+    -webkit-border-radius: 0em;
+    border-radius: 0em;
+    -moz-border-radius:0em;
+}
+body.left-handed .tools-container{
+    left:inherit;
+    right:-500px;
+}
+body.left-handed #tools .btn{
+    margin-left:0!important;
+}
+body.left-handed #tools .btn-home{
+    margin-left:78px!important;
+}
+.btn-swap,
+.page-turner{
+    -webkit-border-radius: 0em;
+    -moz-border-radius: 0em;
+    border-radius: 0em;
+}
+.btn-epv{
+    background-color:transparent!important;
+    padding:0;
+}
+.btn-epv .prev{
+    -webkit-border-top-left-radius: 0.5em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-bottomleft: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+}
+.btn-epv .next{
+    background-image:url('../img/ic-arrow-e-1.png');
+    -webkit-border-top-right-radius: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+    -moz-border-radius-bottomright: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+.btn-epv .prev,
+.btn-epv .next{
+    position: relative;
+    display: inline-block;
+    text-indent: -99999em;
+    width:42px;
+    height:42px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#canvasDiv{
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 80;
+	display: block;
+	pointer-events: none;
+	/*cursor: none;*/
+	cursor: crosshair;
+	width: 100%;
+	height: 100%;
+}
+body.eraser #canvasDiv{
+    cursor: none;
+}
+
+#hotspotDiv{
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 40;
+	display: block;
+	pointer-events: none;
+	cursor: none;
+	/*cursor: crosshair;*/
+	width: 100%;
+	height: 100%;
+}
+
+#swap{
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 2;
+    width:180px;
+    height:100%;
+}
+#swap #pages{
+    display: none;
+}
+#swap #menu{
+    width:444px;
+}
+#swap #menu,
+#swap #tools{
+    position: absolute;
+}
+#swap.left-handed #tools,
+#swap.left-handed #pages{
+    right:0;
+}
+
+.btn-epv > span,
+#pages,
+#pages ul li > a,
+.btn,
+.page-turner{
+    background-color:#12487b;
+}
+.pages-tab-menu .btn-shown{
+    color:#12487b;
+}
+/*#tools .has-data,*/
+.btn.current,
+.btn.active,
+.btn:hover{
+    color:#fff;
+    background-color:#115b02;
+}
+#pages .sub-page li a.current{
+    background-image:url('../img/ic-book-1.png');
+    background-repeat:no-repeat;
+    background-position:222px center;
+}
+#menu .btn{
+    margin-left:0;
+}
+
+.btn-epv-wrapper,
+#menu .page-turner,
+.btn-menu{
+    display:block;
+    float:left;
+    margin-top:0;
+}
+
+#menu .page-turner{
+    padding-left:11px;
+    padding-right:11px;
+    color:#fff;
+}
+.btn-epv-wrapper span{
+    margin:0!important;
+}
+.btn-epv-wrapper.visible span{
+    background-color:#3f1c50!important;
+}
+.btn-epv-wrapper.visible{
+    background-color:#fff;
+    display: block;
+    z-index: 9;
+    -webkit-animation:grow 0.7s 1;
+    -webkit-transform-origin: 0 100%;
+    -moz-animation:grow 0.7s 1;
+    -moz-transform-origin: 0 100%;
+}
+.left-handed .btn-epv-wrapper.visible{
+    -moz-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+}
+@-moz-keyframes grow{
+    0%{
+        -moz-transform: scale(1,1);
+        background-color:#fff;
+        border-top: 1px #b5aaaa solid;
+        border-left: 1px #b5aaaa solid;
+    }
+    50%{
+        -moz-transform: scale(1.4,1.4);
+        background-color:#fff;
+        border-top: 1px #b5aaaa solid;
+        border-left: 1px #b5aaaa solid;
+    }
+    100%{
+        -moz-transform: scale(1,1);
+        background-color:#fff;
+    }
+}
+@-webkit-keyframes grow{
+    0%{
+        -webkit-transform: scale(1,1);
+        background-color:#fff;
+        border-top: 1px #b5aaaa solid;
+        border-left: 1px #b5aaaa solid;
+    }
+    50%{
+        -webkit-transform: scale(1.4,1.4);
+        background-color:#fff;
+        border-top: 1px #b5aaaa solid;
+        border-left: 1px #b5aaaa solid;
+    }
+    100%{
+        -webkit-transform: scale(1,1);
+        background-color:#fff;
+    }
+}
+.btn-epv-wrapper{
+    position: fixed;
+    left:0;
+    bottom:0;
+    display: none;
+}
+#menu .page-turner{
+    padding-left:16px;
+    margin-left:25px;
+}
+.left-handed .page-turner{
+    margin-left:0;
+}
+#menu .page-turner .btn{
+    background-color:transparent;
+    height:39px;
+}
+.page-turner.hide{
+    background-color:transparent;
+}
+.page-turner.hide .page-turner-btn-wrapper{
+    opacity:0;
+}
+.page-turner span{
+    font-size:20px;
+    line-height: 2.5;
+    /* margin:0 3px; */
+}
+.page-turner .btn,
+.page-turner span{
+    float:left;
+    display: block;
+}
+.left-handed .page-num-1{
+    border-left:1px #b5aaaa solid;
+}
+.left-handed .page-num-2{
+    border-right:1px #b5aaaa solid;
+}
+.page-turner-btn-wrapper{
+    float:left;
+    position: relative;
+    /* margin-left: -3px; */
+}
+.left-handed .page-turner-btn-wrapper{
+    float:right;
+    margin-left:0;
+}
+btn-epv .btn-left,
+#menu .page-turner .btn-left{
+    padding:6px 0px 6px 27px;
+    background-image:url('../img/ic-arrow-w-1.png');
+    background-position: left center;
+}
+btn-epv .btn-right,
+#menu .page-turner .btn-right{
+    padding:6px 27px 6px 4px;
+    background-image:url('../img/ic-arrow-e-1.png');
+    background-position: right center;
+    margin-right:0;
+}
+#tools .btn{
+    position: relative;
+    display: block;
+    margin:4px 0;
+    width:100%;
+    -webkit-box-shadow: 0 0 6px rgba(255,255,255,1);
+    -moz-box-shadow: 0 0 6px rgba(255,255,255,1);
+    box-shadow: 0 0 6px rgba(255,255,255,1);
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 0;
+    -mox-border-radius-bottomleft: 0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+}
+
+#tools .btn-pen .show-options-tip,
+#tools .btn-highlighter .show-options-tip
+{
+    display: block;
+    opacity: 1;
+    position: absolute;
+    width:20px;
+    height:20px;
+    right: -3px;
+    bottom:-3px;
+    top:inherit;
+    background:url('../img/lato-select-expand.png') no-repeat center center;
+}
+.left-handed #tools .btn-pen .show-options-tip,
+.left-handed #tools .btn-highlighter .show-options-tip{
+    right:inherit;
+    left: 4px;
+    background:url('../img/lato-select-expand-2.png') no-repeat center center;
+}
+#tools .btn-highlighter.show-options .show-options-tip,
+#tools .btn-pen.show-options .show-options-tip{
+    background: url('../img/lato-select-minimize.png') no-repeat center center;
+}
+.left-handed #tools .btn-highlighter.show-options .show-options-tip,
+.left-handed #tools .btn-pen.show-options .show-options-tip{
+    background: url('../img/lato-select-minimize-2.png') no-repeat center center;
+}
+.left-handed #tools .btn:not(.btn-home){
+    -webkit-border-radius:0.5em;
+    -moz-border-radius:0.5em;
+    border-radius:0.5em;
+    -webkit-border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    -mox-border-radius-bottomright: 0;
+}
+#tools .tools-container .btn:last-child{
+    margin-bottom:0;
+}
+.left-handed .btn{
+    -webkit-transition:right 0.3s ease-in-out;
+    right:0;
+}
+.btn-options .btn-pen-width{
+    display: block;
+    cursor: pointer;
+    width:0;
+    /* background:red; */
+    height: 10px;
+    position: relative;
+    /* -webkit-border-radius:0.2em; */
+    /*-moz-border-radius:0.2em;*/
+    /* border-radius:0.2em; */
+    top: -4px;
+}
+.btn-options .btn-pen-width-1:after{
+    position:absolute;
+    content:'';
+    width:100%;
+    height:1px;
+    left:0;
+    top: 5px;
+    background:#000;
+}
+.btn-options .btn-pen-width-2:after{
+    position:absolute;
+    content:'';
+    width:100%;
+    height:3px;
+    left:0;
+    top: 4px;
+    background:#000;
+}
+.btn-options .btn-pen-width-3:after{
+    position:absolute;
+    content:'';
+    width:100%;
+    height:5px;
+    left:0;
+    top:3px;
+    background:#000;
+}
+.btn-options .btn-pen-width-1{
+    border-bottom-width: 1px;
+    /* top: -6px; */
+    /* margin-bottom: 3px; */
+    /* height: 1px; */
+}
+.btn-options .btn-pen-width-2{
+    border-bottom-width:3px;
+    /* top: -5px; */
+}
+.btn-options .btn-pen-width-3{
+    border-bottom-width:5px;
+    margin-bottom:0;
+}
+.btn > span,
+.btn .btn-options{
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn .btn-options{
+    float:right;
+}
+.left-handed .btn .btn-options{
+    position: relative;
+    right:-25px;
+}
+.btn:hover .btn-options{
+    display: inline-block;
+}
+#hslPicker{
+    position: relative;
+    top:0;
+    float: right;
+}
+.left-handed #hslPicker{
+    right:-31px;
+}
+.cp-swatches,
+.cp-sliders{
+    width:0;
+    overflow: hidden;
+    -webkit-transition:width 0.2s ease-in-out;
+    -moz-transition:width 0.2s ease-in-out;
+    transition:width 0.2s ease-in-out;
+}
+.cp-container .cp-swatches ul{
+    width: 154px;
+}
+.cp-sliders .cp-slider{
+    height:11px;
+    margin-bottom:2px;
+}
+.cp-swatches .add,
+.cp-swatches .remove,
+.cp-swatches .reset,
+.cp-hslhue,
+.cp-hslsaturation,
+.cp-preview,
+.cp-hsllightness{
+    display: none!important;
+}
+.cp-container .cp-swatches li{
+    width:22px;
+    height:22px;
+    margin: 2px 8px;
+}
+.cp-slider > span{
+    text-indent: -999999em;
+}
+.btn-swap{
+    text-align: center;
+    padding:8px 11px 4px;
+}
+
+#tools .btn-home{
+    background-image:url('../img/ic-home-1.png');
+    background-position: center center;
+    margin-top:0;
+    display: block;
+    border:0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width:40px;
+    height:40px;
+    -webkit-border-bottom-left-radius: 0.3em;
+    -webkit-border-bottom-right-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    -moz-border-radius-bottomleft: 0.3em;
+    -moz-border-radius-bottomright: 0.3em;
+    margin-left:5px;
+}
+#tools .btn-header{
+    padding-top:4px;
+    padding-bottom:4px;
+    font-weight: bold;
+}
+.btn-pointer{
+    background-image:url('../img/ic-pointer-1.png');
+}
+.btn-pen-width,
+.btn-pen{
+    background-image:url('../img/ic-pencil-1.png');
+    -moz-transition:width 0.2s ease-in-out;
+}
+#tools .btn-pen.show-options .btn-pen-width{
+    width: 33px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px; 
+}
+#tools .btn-pen.show-options .btn-pen-width:last-child{
+    margin-right:0;
+}
+.btn-pen-colors{
+    width:0;
+}
+.btn-pen-colors span{
+    float:left;
+    cursor:pointer;
+    display: block;
+    width:0;
+    height:17px;
+    margin: 0 19px 0 0;
+    -webkit-border-radius:0.2em;
+    -moz-border-radius:0.2em;
+    border-radius:0.2em;
+}
+.btn-pen-colors span:last-child{
+    margin-right:0;
+}
+.btn-pen.show-options .btn-pen-colors{
+    width: 150px;
+    position: relative;
+    margin-top: -6px;
+}
+.cp-container .cp-swatches li.actual:before,
+.btn-pen.show-options .btn-pen-width.selected:before{
+    content:'';
+    display: block;
+    position: absolute;
+    border:1px #111 solid;
+    width:37px;
+    left:-2px;
+    height:9px;
+    -webkit-border-radius:0.2em;
+    -moz-border-radius:0.2em;
+    border-radius:0.2em;
+}
+.btn-pen.show-options .btn-pen-width-3.selected:before{
+    top: 0px;
+    height: 10px;
+}
+.btn-pen.show-options .btn-pen-width-2.selected:before{
+    top: 1px;
+}
+.btn-pen.show-options .btn-pen-width-1.selected:before{
+    top: 1px;
+}
+.btn-pen.show-options .btn-pen-colors span.selected:before{
+    content:'';
+    display: block;
+    position: absolute;
+    width:26px;
+    height: 26px;
+    border:1px #111 solid;
+    left:-2px;
+    top:-2px;
+    -webkit-border-radius:0.2em;
+    -moz-border-radius:0.2em;
+    border-radius:0.2em;
+}
+.btn-pen.show-options .btn-pen-colors span{
+    width:22px;
+    position: relative;
+    height: 22px;
+}
+#tools .has-data,
+#tools .btn-pen.current{
+    width:170px;
+}
+.btn-eraser{
+    background-image:url('../img/ic-eraser-2.png');
+}
+.btn-highlighter{
+    background-image:url('../img/ic-highlighter-1.png');
+    background-position: -26px -8px;
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+}
+.left-handed .btn-highlighter{
+    background-image:url('../img/ic-highlighter-2.png');
+    background-position: 42px -31px!important;
+}
+#tools .btn-highlighter.show-options{
+    width:254px;
+}
+#tools .btn-highlighter.show-options .cp-swatches{
+    width: 150px;
+		margin-top: -3.5px;
+}
+#tools .btn-highlighter.show-options .cp-sliders{
+    width: 106px;
+}
+.has-data .trash-data{
+    display: block;
+}
+.trash-data{
+    text-indent:-99999em;
+    display: none;
+    background: #73cf30;
+border: 2px #fff solid;
+font-size: 11px;
+line-height: 1.2;
+-webkit-border-radius: 1em;
+-moz-border-radius: 1em;
+border-radius: 1em;
+-webkit-box-shadow: 0 2px 0 #000;
+-moz-box-shadow: 0 2px 0 #000;
+box-shadow: 0 2px 0 #000;
+color: #000;
+font-weight: bold;
+position: absolute;
+right: 2px;
+top: 3px;
+    width: 23px;
+    padding: 0;
+    height: 23px;
+    text-indent: -9999em;
+}
+.btn-stopwatch{
+    background-image:url('../img/ic-watch-1.png');
+}
+.btn-mask{
+    background-image:url('../img/ic-mask-1.png');
+}
+.btn-spotlight{
+    background-image:url('../img/ic-spotlight-1.png');
+}
+.btn-notes{
+    background-image:url('../img/ic-notes-1.png');
+}
+.btn-menu.align-right{
+    float:right;
+    position: relative;
+    background-image:url('../img/ic-menu-2.png');
+    background-position: right center;
+    padding-right:66px;
+    padding-left:11px;
+    margin-top:0;
+    margin-right:-3px;
+}
+.btn-menu{
+    background-image:url('../img/ic-menu-1.png');
+    background-position: left center;
+    padding-left:66px;
+    margin-left:-3px!important;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+.btn-menu span{
+    font-size: 18px;
+}
+.left-handed .btn-menu{
+    background-image:url('../img/ic-menu-2.png');
+    background-position: right center;
+    padding-left:11px;
+    padding-right:66px;
+}
+#ribbon,
+#dumbBg{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    background:#fff;
+    z-index: 0;
+    /*initial setting*/
+    height:76px;
+}
+#dumbBg{
+    margin-top:53px;
+    height:0;
+}
+#ribbon{
+    background:url('../img/ribbon-1.png') no-repeat center top;
+    height:0;
+    z-index: 0;
+    margin-top:53px;
+}
+.tools-container{
+    left:-500px;
+    position: relative;
+}
+.media-tools-container{
+    /* position: absolute; */
+    /* left:0; */
+    /* bottom:71px; */
+    float: left;
+}
+.media-tools-container .btn span{
+    font-size:13px;
+}
+.media-tools-container .btn{
+    background-position: center center;
+    text-align: center;
+    position: relative;
+    margin-top:8px;
+    margin-bottom:8px;
+    width: 61px!important;
+    text-indent: -9999em;
+    margin-right: 0;
+    font-size: 1em;
+    border-right: 1px #b5aaaa solid!important;
+    height: 50px!important;
+    margin: 0;
+    display:block;
+    float:left;
+    display:none;
+}
+.left-handed .media-tools-container .btn{
+    border-right:0!important;
+    border-left:1px #b5aaaa solid!important;
+}
+.media-tools-container .btn > span{
+    line-height:48px;
+    text-transform: capitalize;
+}
+.media-tools-container .btn-audio{
+    background-position:center 2px;
+    background-image:url('../img/ic-headphone-1.png');
+}
+.media-tools-container .btn-video{
+    background-image:url('../img/ic-film-1.png');
+    background-position: center top;
+}
+.btn-answers.current i,
+.btn-answers:hover i,
+.btn-interactive.current i,
+.btn-interactive:hover i,
+.btn-karaoke.current i,
+.btn-karaoke:hover i{
+    background-image:url('../img/ic-bam-2.png');
+}
+.btn-teacher-tips{
+    background-image:url('../img/ic-talkballoon-1.png');
+}
+
+/*pupil book*/
+/*work book*/
+#pages{
+    width: 434px;
+    position: fixed;
+    top:0;
+    left: 50px;
+    height: 387px;
+    top: 105px;
+    z-index: 999999;
+    display: none;
+}
+.left-handed #pages{
+    left:inherit;
+    right:50px;
+}
+.sub-page{
+    border-bottom:0;
+    display: none;
+}
+#pages ul{
+    position: relative;
+    list-style: none;
+    padding:0;
+    margin:0;
+    background:#fff;
+    margin-bottom:-2px;
+}
+#pages ul li > a{
+    position: relative;
+}
+#user_notes{
+    overflow: scroll;
+}
+#user_notes, #user_notes_txtarea{
+    width:350px;
+    height:200px;
+    /* overflow-y: scroll; */
+    /*overflow-x: auto;*/
+    -ms-overflow-style:hidden;
+}
+#dialog-note-warning .dialog-button-pane button,
+#buttons button,
+.save-data, .edit-data{
+    background-color:#512d62;
+    border:0;
+    color:#fff;
+    padding:5px 10px;
+    text-transform: capitalize;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+.save-data, .edit-data{
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+}
+textarea{
+    resize: none;
+    width:100%;
+    min-height:100px;
+		border: 0;
+}
+.dialog-button-pane{
+    display: block;
+    padding:10px 0;
+}
+#dialog-note-warning{
+    height:100px;
+}
+.save-confirm-dialog .ui-dialog-title{
+    height:23px;
+}
+#dialog-note-warning {
+    font-weight: bold;
+}
+#dialog-note-warning .dialog-button-pane #b2{
+    margin-left:3em;
+}
+#dialog-note-warning .dialog-button-pane #b3{
+    float:right;
+}
+#dialog-note-warning .dialog-button-pane button{
+    font-weight:normal;
+}
+#dialog-note-warning .dialog-button-pane{
+    position: absolute;
+    bottom:0;
+    left:0;
+    padding:10px;
+    width:100%;
+}
+#dialog-note-warning .dialog-button-pane button{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.tab{
+    display: none;
+    position: absolute;
+    height:100%;
+    width:100%;
+}
+.tab-show{
+    
+    display: block;
+}
+.scroll-pane{
+    position:relative;
+    height:100%;
+    overflow: hidden;
+    width:100%;
+    background-color:#fff;
+}
+.pages-tab-footer{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    left:0;
+}
+.pages-tab-menu{
+    border-top:2px #072d44 solid;
+}
+.pages-tab-menu .btn{
+    float:left;
+    display: block;
+    width:50%;
+    margin:0;
+    padding:11px;
+    text-align: center;
+    text-transform: capitalize;
+    border-bottom:2px #072d44 solid;
+    font-size:12px;
+}
+.pages-tab-menu .btn-pupil-book,
+.pages-tab-menu .btn-vocabulary-tool,
+.pages-tab-menu .btn-storyteller{
+    border-right:2px #072d44 solid;
+}
+.pages-tab-menu .btn-storyteller,
+.pages-tab-menu .btn-grammer-tool{
+    border-bottom:0;
+}
+.pages-tab-menu .btn-shown{
+    background-color:#115b02;
+    color:#fff;
+}
+.pages-tabs-scroller{
+    text-align: center;
+    border-top:2px #fff solid;
+}
+.pages-tabs-scroller .pages-tab-scrolltop{
+    background:#fff url('../img/ic-arrow-n-1.png') no-repeat center center;
+}
+.pages-tabs-scroller .pages-tab-scrollbottom{
+    background:#fff url('../img/ic-arrow-s-1.png') no-repeat center center;
+}
+.pages-tabs-scroller a{
+    cursor: pointer;
+    display: inline-block;
+    width:60px;
+    height:40px;
+    -webkit-border-bottom-left-radius: 0.3em;
+    -webkit-border-bottom-right-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    -moz-border-radius-bottomleft: 0.3em;
+    -moz-border-radius-bottomright: 0.3em;
+}
+.contains-video i{
+    background:url('../img/ic-video-1.png') no-repeat center center;
+}
+
+/*dialog*/
+.dialog {
+    display: none;
+}
+#dialog-audio,#dialog-audiop{
+    width:100%!important;
+    min-height: 62px!important;
+}
+.ui-dialog-titlebar{
+    background-color:#512d62;
+}
+.ui-dialog-title{
+    color:#fff;
+    font-size:18px;
+    padding-left: 0;
+    width: auto!important;
+}
+.ui-dialog-titlebar-buttonpane{
+    position: relative;
+    top: 24px!important;
+    right: 11px!important;
+}
+.ui-dialog .ui-dialog-titlebar-restore,
+.ui-dialog .ui-dialog-titlebar-minimize{
+    width:27px!important;
+    height:27px!important;
+    display: inline-block;
+    background:url('../img/lato-minus-2.png') no-repeat center center;
+    text-indent: -99999em;
+    margin-right:4px;
+    display: none;
+}
+
+.ui-dialog-titlebar-minimize {
+    background-size: cover!important;
+    margin-top: 1px!important;
+}
+.dialog-st-dialog.ui-dialog .ui-dialog-titlebar-minimize,
+.dialog-dt-dialog.ui-dialog .ui-dialog-titlebar-minimize,
+.dialog-gt-dialog.ui-dialog .ui-dialog-titlebar-minimize,
+.dialog-vt-dialog.ui-dialog .ui-dialog-titlebar-minimize{
+    /*display: auto!important;*/
+}
+.ui-dialog .ui-dialog-titlebar-restore{
+    background:url('../img/lato-plus-2.png') no-repeat center center;
+}
+#dialog-extend-fixed-container .ui-dialog .header-gear,
+#dialog-extend-fixed-container .ui-dialog .header-home,
+#dialog-extend-fixed-container .ui-dialog .header-back-button,
+#dialog-extend-fixed-container .ui-dialog .header-forward-button,
+#dialog-extend-fixed-container .ui-dialog .header-units {
+    display: none;
+}
+#dialog-extend-fixed-container{
+    z-index: 99!important;
+}
+#dialog-extend-fixed-container .ui-dialog{
+    width:300px!important;
+}
+.ui-dialog .ui-dialog-titlebar-close{
+    right: 9px;
+    margin-top:-14px;
+}
+.ui-dialog-titlebar-close{
+    border:0;
+    background:transparent;
+}
+.ui-dialog .ui-dialog-titlebar-close,
+.ui-dialog-titlebar-close .ui-icon-closethick{
+    display: block;
+    width: 28px;
+    height: 29px;
+}
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon{
+    margin-left:0;
+    left:0;
+}
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon{
+    margin-top:0;
+    top:0;
+}
+.ui-dialog-titlebar-close .ui-icon-closethick{
+    background:url('../img/lato-close-1.png') no-repeat center center;
+}
+.ui-dialog{
+    border: 1px #666 solid;
+    padding:0;
+}
+.ui-widget-content{
+    background-color:#fff;
+}
+.ui-widget-overlay{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-image:url('../img/lato-bg-1.png');
+}
+.ui-dialog{
+    z-index:999999;
+}
+/*buttons left sided*/
+.left-handed .btn-answers i,
+.left-handed .btn-interactive i,
+.left-handed .btn-karaoke i{
+    right:inherit;
+    left:-24px;
+}
+
+/*timer*/
+.bigger-timer .ui-dialog-titlebar button,
+.dialog-timer-dialog .ui-dialog-titlebar button{
+    /*display: none;*/
+}
+.bigger-timer,
+.dialog-timer-dialog{
+    -moz-border-radius-bottomleft: 1em;
+    -moz-border-radius-bottomright: 1em;
+}
+.bigger-timer,
+.dialog-timer-dialog,
+#dialog-timer{
+    overflow: visible;
+    border-top-width:0px;
+}
+#dialog-timer{
+    text-align: center;
+    width: 200px!important;
+}
+#timer{
+    display: inline-block;
+}
+.going #timerSeparator{
+    -webkit-animation:blink 1s infinite;
+    -moz-animation:blink 1s infinite;
+    animation:blink 1s infinite;
+}
+@-webkit-keyframes blink{
+    0%{
+        opacity:1;
+    }
+    50%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+#timer span,
+#timer input{
+    border:0;
+    display: inline-block;
+    font-size: 48px;
+    line-height: 1;
+    background:transparent;
+}
+.stop-watch-btn-tools .stop-watch-btn{
+    border:1px #fff solid;
+    display: table-cell;
+    width:50%;
+}
+.stop-watch-btn-tools{
+    position: relative;
+    background-color:#512d62;
+    display: table;
+    width:auto;
+    padding:0 40px;
+    margin-left:-1em;
+    margin-right:-1em;
+    top: 7px; 
+}
+#timer input{
+    width: 50px;
+}
+.bigger-timer #timer input{
+    width:63px;
+}
+.bigger-timer #dialog-timer{
+    width:237px!important;
+}
+#addMin,
+#minusMin,
+#addSec,
+#minusSec{
+    display: table-cell;
+    width:78px;
+    height:22px;
+    text-indent: -99999em;
+    cursor: pointer;
+    float:left;
+}
+#addMin,
+#addSec{
+    background:url('../img/lato-arrow-n-2.png') no-repeat center center;
+}
+#minusMin,
+#minusSec{
+    background:url('../img/lato-arrow-s-4.png') no-repeat center center;
+    position: relative;
+}
+#addSec,
+#minusSec{
+    margin-left:-1px;
+}
+#minusMin,
+#minusSec{
+    margin-top:-1px;
+    border-bottom:0;
+}
+#addSec,
+#addMin{
+    border-top:0;
+}
+
+#closeTimer,
+#refreshTimer,
+#startTimer{
+    display: block;
+    width:28px;
+    height:28px;
+    background:url('../img/lato-timer-play-1.png') no-repeat center center;
+    left:-68px;
+    text-indent: -9999em;
+    cursor: pointer;
+    position: absolute;
+}
+.bigger-timer #startTimer{
+    top:20px;
+    left:9px;
+}
+.bigger-timer #refreshTimer{
+    top:19px;
+}
+#startTimer.pause-timer{
+    background:url('../img/lato-timer-pause-1.png') no-repeat center center;
+}
+#closeTimer{
+    width:42px;
+    height:42px;
+    background:url('../img/ic-close-2.png') no-repeat center center;
+    top: -30px;
+    left: -28px;
+    display: none;
+}
+#refreshTimer{
+    background:url('../img/lato-rewind-1.png') no-repeat center center;
+    right:9px;
+    top:17px;
+    left:inherit;
+}
+.bigger-timer .ui-dialog-title{
+    /*font-size:22px;*/
+}
+.bigger-timer .ui-dialog-titlebar{
+    /*padding:1em;*/
+}
+/*.bigger-timer .ui-dialog-titlebar-close .ui-icon-closethick,*/
+.bigger-timer #refreshTimer,
+.bigger-timer #startTimer{
+    width: 38px;
+    height: 39px;
+    background:url('../img/lato-timer-play-3.png') no-repeat center center;
+}
+.bigger-timer .ui-dialog-titlebar-close .ui-icon-closethick{
+    /*left:-12px;*/
+    /*top:3px;*/
+    /*background:url('../img/lato-close-2.png') no-repeat center center;*/
+}
+.bigger-timer #refreshTimer{
+    background:url('../img/lato-timer-rewind-2.png') no-repeat center center;
+}
+.bigger-timer #startTimer.pause-timer{
+    background:url('../img/lato-timer-play-4.png') no-repeat center center;
+}
+/*main data*/
+
+#data img{
+    display: inline-block;
+    max-height:100%;
+    max-width: 50%;
+    position: relative;
+    z-index: 1;
+}
+#data{
+    width:100%;
+    height:100%;
+    align-self: center;
+}
+#pagecontent{
+    position: relative;
+    left:50px; 
+    top: 14px; 
+	text-align: center;
+	width: 100%;
+	/*position: fixed;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	was giving me probs, but only wanted vert cent anyway.*/
+  align-self: center;
+	/*-webkit-transition: 350ms ease-out; needs to be on the element, so the js can remove it.*/
+	-webkit-transform-origin: 0 0;
+        -webkit-transition:left 0.2s ease-in-out;
+        -moz-transition:left 0.2s ease-in-out;
+        transition:left 0.2s ease-in-out;
+	-webkit-user-select: none;
+    z-index: 1;
+	background-color: rgb(241, 241, 241);
+}
+body.left-handed #pagecontent{
+    left:0;
+}
+
+/*video player*/
+#dialog-video{
+    padding:0;
+    /*overflow: hidden;*/
+    background:#522d61;
+}
+.dialog-video-dialog{
+    border:0;
+    overflow: visible;
+}
+.dialog-video-dialog .ui-dialog-titlebar-close{
+    /*top:-24px;*/
+}
+.jp-progress{
+    display: block;
+    width:100%;
+    height:5px;
+    position: relative;
+    background:#777;
+}
+.jp-seek-bar{
+    position: absolute;
+    width:99%!important;
+    height:100%;
+    cursor: pointer;
+}
+.jp-volume-bar-value,
+.jp-play-bar{
+    position: absolute;
+    background: #73cf30;
+    height:100%;
+}
+.controls-wrapper{
+    background-color: #522d61;
+    padding:14px;
+    color:#fff;
+}
+.controls-right{
+    float:right;
+}
+.controls-left{
+    float:left;
+}
+.jp-mute,
+.jp-unmute,
+.jp-full-screen,
+.jp-restore-screen,
+.jp-play,
+.jp-pause{
+    display: block;
+    text-indent: -99999em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float:left;
+}
+.jp-time-separator,
+.jp-duration,
+.jp-current-time{
+    display: block;
+    float:left;
+    font-size:12px;
+    margin-top: 0;
+    position: relative;
+    margin-right:4px;
+}
+.jp-pause,
+.jp-play{
+    width:17px;
+    height:20px;
+    background-image:url('../img/ic-play-2.png');
+    margin-right:50px;
+}
+.jp-pause{
+    background-image:url('../img/ic-pause-3.png');
+}
+.jp-full-screen{
+    width:20px;
+    background-image:url('../img/ic-fullscreen-1.png');
+}
+.jp-restore-screen{
+    width:20px;
+    background-image:url('../img/ic-fullscreen-2.png');
+}
+.jp-full-screen,
+.jp-restore-screen,
+.jp-volume-bar{
+    float:left;
+}
+.jp-volume-bar{
+    position: relative;
+    width:80px;
+    top:5px;
+    margin-right: 16px;
+    height:7px;
+    background:#777;
+    cursor: pointer;
+}
+.jp-volume-bar-value{
+    position: absolute;
+    left:0;
+    top:0;
+    height:100%;
+}
+.jp-unmute,
+.jp-mute{
+    margin-right:11px;
+    position: relative;
+    top:-1px;
+    width:27px;
+    height:23px;
+    background-image:url('../img/ic-speaker-1.png');
+}
+.jp-unmute{
+    background-image:url('../img/ic-speaker-2.png');
+}
+
+.audioControls{
+    position: relative;
+    margin-top: 10px;
+}
+.audioControls .jp-play,
+.audioControls .jp-pause{
+    position: relative;
+    width:28px;
+    height:28px;
+    margin-right: 8px;
+}
+.audioControls .jp-pause{
+    background: url('../img/lato-timer-pause-1.png') no-repeat center center;
+}
+.audioControls .jp-play{
+    background:url('../img/lato-timer-play-1.png') no-repeat center center;
+}
+
+.audioControls .jp-pause,
+.audioControls .jp-play,
+.audioControls .progress-wrapper{
+    float:left;
+}
+#showAudioScript, #showAudioScriptp, #showVideoScript{
+    color:#111;
+    display: inline-block;
+    margin:6px 0;
+    cursor: pointer;
+    padding-left:22px;
+    background:url('../img/lato-script-1.png') no-repeat left center;
+}
+#showVideoScript{
+    padding-left:0;
+    width:29px;
+    height:26px;
+    margin:0;
+    display: block;
+    float:left;
+    background:url('../img/lato-dialogue-2.png') no-repeat left center;
+    margin-right: 10px;
+    -webkit-transition:background-image 0.2s ease-in-out;
+}
+#showVideoScript.active{
+    background-image:url('../img/lato-dialogue-3.png');
+}
+.audioControls .progress-wrapper{
+    width: 87%;
+    position: relative;
+    top: 5px;
+}
+.audioControls .jp-play-bar{
+    background:#73cf30;
+    box-sizing: border-box;
+    height:10px;
+}
+.audioControls .jp-progress{
+    padding:2px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    height: 16px;
+    position: relative;
+    /* top:16px; */
+    background:#fff;
+    border:1px #12497c solid;
+    box-sizing: border-box;
+}
+#audioScript,#audioScriptp {
+    position: relative;
+    margin-left:-14px;
+    margin-right:-14px;
+    padding:15px;
+    border-top:1px #1a4a7a solid;
+    margin-top:20px;
+    display: none;
+}
+#videoPlayer{
+    background:#fff;
+}
+#videoScript{
+    color:#522d61;
+    /*background:#fff;
+    border-top:1px rgba(255,255,255,0.2) solid;*/
+    background: transparent;
+  	border-top: 1px transparent solid;
+	position: absolute;
+	bottom: 60px;
+	width: 100%;
+    height: 46px; 
+    font-weight: bold;
+}
+div.srt{
+	text-align:center;
+	font-size:18px;
+	display: inline-block;
+	background-color: #000;
+	color: #fff;
+}
+.video-script-window{
+    position: relative;
+    overflow: auto;
+    height: 46px; 
+    display: none;
+}
+.video-script-pane{
+    position: absolute;
+    left:0;
+    top: 8px;
+    padding:0 40px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    width:100%; 
+    text-align: center;
+}
+.script-window{
+    position: relative;
+    overflow-y: scroll;
+    height:135px;
+}
+.script-pane{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+}
+.script-pane p{
+    margin:3px 0;
+}
+.script-pane .current{
+    background-color:#f4f25d;
+    font-weight: bold;
+}
+.ui-resizable:not(.dialog-note-dialog){
+    /*padding-bottom:35px;*/
+}
+.ui-resizable.dialog-answers-dialog{
+    padding-bottom:0;
+}
+.ui-resizable-handle.ui-resizable-se{
+    width:13px;
+    height:13px;
+    background:url('../img/lato-resize-se-1.png') no-repeat center center;
+    right:2px;
+    bottom:2px;
+}
+.ui-resizable-handle.ui-resizable-sw{
+    display: none!important;
+    width:50px;
+    height:50px;
+    left:-2px;
+    bottom:-2px;
+    background:url('../img/ic-resize-sw-1.png') no-repeat center center;
+}
+iframe{
+    border:0;
+}
+#iFrame-rcf, #iFrame-help{
+    width: 100%;
+    height: 100%;
+    min-height: 730px;
+}
+#iFrame-rcf-k{
+    width:100%;
+    height: 89%;
+    min-height: 655px;
+}
+.dialog-interactive-dialog .ui-dialog-content{
+    height: 100%!important;
+}
+.dialog-karaoke-dialog .ui-dialog-content{
+    height: 100%!important;
+}
+
+/*answer form input*/
+#dialog-answers ol{
+    min-width:200px;
+    margin: 0;
+    padding:0;
+    list-style: decimal inside;
+}
+#dialog-answers .form-input span{
+    /*color:#777;*/
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    /* top:8px; */
+    /*font-family: 'Muli';
+    font-weight: bold;*/
+}
+#dialog-answers .form-input span.answerkeyAnswer{
+    display: block;
+    text-align: left;
+    border: 1px #ddd solid;
+    padding: 0.2em;
+    min-height: 32px;
+    font-weight: bold;
+}
+#dialog-answers ol li{
+    margin:5px 0;
+    padding:5px;
+    border:1px #dadada solid;
+    width:240px!important;
+}
+#dialog-answers .form-input{
+    margin:4px 0;
+    text-align: left;
+}
+#dialog-answers .form-input input{
+    width:100%;
+    font-weight: bold;
+}
+#dialog-answers .form-input{
+    display: table-row;
+    width: 100%;
+}
+.form-input .form-number{
+    font-size: 0.77em;
+    padding-right: 0.6em;
+}
+.form-input .form-number,
+.form-input .form-input-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 5px;
+}
+/*
+#dialog-answers .form-input > input[type="text"],
+#dialog-answers .form-input > span{
+    display: table-cell;
+    vertical-align: middle;
+    float:none;
+}*/
+#show-all-answers, #reset-answers{
+    text-align: center;
+    color:#111;
+    font-weight: normal;
+    margin:20px 0 4px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    float: left;
+}
+#dialog-answers .button-pane{
+    text-align: center;
+}
+#dialog-answers .btn{
+    padding: 4px 20px;
+    background-color:#512d62;
+    color:#fff;
+}
+.form-input{
+    text-align: center;
+}
+.form-input > span{
+    color:#12497c;
+    font-weight: bold;
+    font-size:20px;
+    margin-right:7px;
+}
+input[type="text"]{
+    border:0;
+    padding:3px;
+    border:1px #ccc solid;
+    background: transparent;
+    -webkit-transition:background 0.2s ease-in-out;
+    -moz-transition:background 0.2s ease-in-out;
+    transition:background 0.2s ease-in-out;
+}
+.form-group label{
+    margin-right:4px;
+    font-weight: 700;
+}
+.ui-dialog .form-group{
+    border-bottom:1px #ddd solid;
+    border-top:1px #ddd solid;
+    padding:10px 0;
+}
+.form-input > input,
+.form-input > span{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cursor{
+    position: fixed;
+    width:34px;
+    height:50px;
+    background-position:left bottom;
+    /*border:1px red solid;*/
+    background:red;
+    display: none;
+    z-index: 999;
+}
+#cursor.eraser{
+    background:url('../img/lato-eraser-3.png') no-repeat left bottom!important;
+    width: 24px;
+    height: 24px;
+}
+#cursor.eraser:after{
+    position: absolute;
+    content:'';
+    display:block;
+    background: url('../img/lato-eraser-1.png') no-repeat left top;
+    width:33px;
+    height:33px;
+    right:-29px;
+    top:-24px;
+}
+#cursor.mask{
+    background:url('../img/lato-cursor-mask-1.png') no-repeat left bottom!important;
+}
+#cursor.spotlight{
+    background:url('../img/lato-cursor-spotlight-1.png') no-repeat left bottom!important;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    cursor: pointer;
+    border:0;
+    font-size:15px;
+    background-color:#1a4a7a;
+    background-image:url('../img/select-arrow-1.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    color:#fff;
+    padding:6px 35px 6px 10px;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+
+.left-handed #ebookselectorwrapper:after,
+.row-fluid:after,
+.btn-pen-colors:after,
+.page-turner:after,
+.audioControls:after,
+.controls-left:after,
+.controls-right:after,
+.controls-wrapper:after,
+.progress-wrapper:after,
+.stop-watch-btn-tools:after,
+.pages-tab-menu:after,
+#pages ul li > a:after,
+#menu:after{
+    content:'';
+    display: block;
+    height:0;
+    clear:both;
+}
+#dialog-stopwatch .timer {
+	padding: 10px;
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	
+}
+#dialog-stopwatch .cell {
+	/*Should only display 1 digit. Hence height = line height of .numbers
+	and width = width of .numbers*/
+	width: 0.60em;
+	height: 40px;
+	font-size: 50px;
+	overflow: hidden;
+	position: relative;
+	float: left;
+}
+
+#dialog-stopwatch .numbers {
+	width: 0.6em;
+	line-height: 40px;
+	font-family: digital, arial, verdana;
+	text-align: center;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*Styles for the controls*/
+#dialog-stopwatch input[name="controls"] {display: none;}
+
+/*Control code*/
+#stop:checked~.timer .numbers {-webkit-animation-play-state: paused;}
+#start:checked~.timer .numbers {-webkit-animation-play-state: running;}
+#reset:checked~.timer .numbers {-webkit-animation: none;}
+
+.moveten {
+	/*The digits move but dont look good. We will use steps now
+	10 digits = 10 steps. You can now see the digits swapping instead of 
+	moving pixel-by-pixel*/
+	-webkit-animation: moveten 1s steps(10, end) infinite;
+	/*By default animation should be paused*/
+	-webkit-animation-play-state: paused;
+}
+.movesix {
+	animation: movesix 1s steps(6, end) infinite;
+}
+
+/*Now we need to sync the animation speed with time speed*/
+/*One second per digit. 10 digits. Hence 10s*/
+.second {-webkit-animation-duration: 10s;}
+.tensecond {-webkit-animation-duration: 60s;} /*60 times .second*/
+
+.minute {-webkit-animation-duration: 600s;} /*60 times .second*/
+.tenminute {-webkit-animation-duration: 3600s;} /*60 times .minute*/
+
+@-webkit-keyframes moveten {
+	0% {top: 0;}
+	100% {top: -400px;} 
+	/*height = 40. digits = 10. hence -400 to move it completely to the top*/
+}
+
+@-webkit-keyframes movesix {
+	0% {top: 0;}
+	100% {top: -240px;}
+	/*height = 40. digits = 6. hence -240 to move it completely to the top*/
+}
+
+
+/*new skin*/
+#roswellmain{
+    position: relative;
+    width:100%;
+    height:100%;
+}
+#header{
+    /*purple*/
+    background-color:#512d62;
+}
+#header{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100%;
+    z-index: 99;
+    padding:10px;
+    border-bottom: 10px #ffdd00 solid;
+}
+#header #logo img{
+    max-width:100%;
+}
+#header #logo{
+    float:right;
+    margin-right:40px;
+}
+.left-handed #header #logo{
+    float:left;
+    margin-left:45px;
+}
+.btn-toggle .btn:first-child,
+.btn-toggle .btn:last-child,
+.btn-toggle .btn,
+#header .btn{
+    display: inline-block;
+    padding:10px;
+    width:50px;
+    height:50px;
+    border: 1px #a896b1 solid;
+    margin-left:0;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-color:transparent;
+    border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    -webkit-border-radius: 0!important;
+}
+#header .btn{
+    float:none;
+    
+    margin:0 10px 0 0;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+}
+#header #pagenum{
+    position: relative;
+    left: 20px;
+    top: 23px;
+    text-align: center;
+    z-index: 1;
+    color:#fff;
+    font-size:27px;
+    line-height: 0;
+    font-weight: 300;
+    display: inline-block;
+    margin-bottom: 0;
+}
+.left-handed #header #pagenum{
+    float: right;
+    margin-right: 20px;
+    left: 0;
+    top: 30px;
+}
+#header .btn-menu:hover{
+    background-image:url('../img/lato-menu-1-inverted.png');
+    color:#111;
+}
+#header .btn-menu{
+    background-image:url('../img/lato-menu-1.png');
+    padding-left:50px;
+    font-size:20px;
+    font-weight: 300;
+    width:auto;
+    padding-top:12px;
+    background-position: 14px center;
+    color:#fff;
+}
+#header .btn{
+    display: block;
+    float:left;
+}
+.left-handed #header .btn{
+    float:right;
+}
+#header .btn-home:hover{
+    background-image:url('../img/lato-home-1-inverted.png');
+    color:#111;
+}
+#header .btn-home{
+    background-image:url('../img/lato-home-1.png');
+}
+#header .btn-help:hover{
+    background-image:url('../img/lato-help-1-inverted.png');
+    color:#111;
+}
+#header .btn-help{
+    background-image:url('../img/lato-help-1.png');
+}
+.tools-container-2 .btn > span{
+    width: 0;
+    overflow: hidden;
+    font-size:17px;
+}
+.shown .tools-container-2 .btn:not(.btn-header){
+    width:170px!important;
+    background-color:#fff;
+}
+.left-handed .shown .tools-container-2 .btn{
+    background-position:130px center!important;
+}
+.left-handed .tools-container-2 .btn.btn-header,
+.tools-container-2 .btn{
+    background-position: 10px center!important;
+}
+.left-handed .shown .tools-container-2 .btn.btn-stopwatch{
+    background-position:128px center!important;
+}
+.left-handed .shown .tools-container-2 .btn.btn-spotlight,
+.left-handed .shown .tools-container-2 .btn.btn-mask{
+    background-position:129px center!important;
+}
+.left-handed .shown .tools-container-2 .btn.btn-notes{
+    background-position:133px center!important;
+}
+.left-handed .shown .tools-container-2 .btn.btn-hotspots{
+    background-position:132px center!important;
+}
+.left-handed .shown .tools-container-2 .btn > span{
+    padding-left:10px;
+}
+.shown .tools-container-2 .btn > span{
+    width:auto;
+    display: block;
+    padding-left: 59px;
+    position: relative;
+    z-index: 1;
+}
+.shown .tools-container-2 .btn > i{
+    position: absolute;
+    width: 119px;
+    height:100%;
+    top:0;
+    right:0;
+    z-index: 0;
+    opacity: 0;
+}
+.shown .tools-container-2 .btn.current,
+.shown .tools-container-2 .btn:hover{
+    color:#333;
+}
+.shown .tools-container-2 .btn.current > i,
+.shown .tools-container-2 .btn:hover > i{
+    opacity: 1;
+}
+.btn-options,
+#hslPicker{
+    background-color:#fff;
+    padding:0;
+}
+.cp-container .cp-swatches li.actual:before{
+    width:26px;
+    height:26px;
+    top:-2px;
+}
+.cp-container .cp-swatches li.actual{
+    box-shadow: none;
+    position: relative;
+}
+.btn.show-options .btn-options:before,
+.btn.show-options #hslPicker:before{
+    position: absolute;
+    content:'';
+    display: block;
+    width:7px;
+    height:16px;
+    left:-7px;
+    top:50%;
+    margin-top:-8px;
+    background:url('../img/lato-arrow-ew-1.png') no-repeat left center;
+}
+.left-handed .btn.show-options .btn-options:before,
+.left-handed .btn.show-options #hslPicker:before{
+    left:inherit;
+    right:-7px;
+    background:url('../img/lato-arrow-ew-1.png') no-repeat right center;
+}
+.btn.show-options .btn-options,
+.btn.show-options #hslPicker
+{
+    display: block;
+    top:0;
+    position: absolute;
+    padding-left:0;
+    height:51px;
+    left:100%;
+    /*margin-left:1px;*/
+    padding:14px;
+    -webkit-transition:none;
+    -moz-transition:none;
+    transition:none;
+    border: 1px #b5aaaa solid;
+    margin-left:0px;
+    margin-top:-1px;
+    z-index: 9999;
+    cursor: default;
+}
+.btn-pen.current .btn-options{
+    overflow: hidden;
+    
+}
+.left-handed .btn.show-options .btn-options,
+.left-handed .btn.show-options #hslPicker{
+    left:inherit;
+    right:100%;
+    margin-left:0;
+    margin-right:0px;
+}
+.tools-container-2 .btn,
+.cp-swatches, .cp-sliders{
+    -webkit-transition:none;
+    -moz-transition:none;
+    transition:none;
+}
+#tools{
+    width: 50px;
+}
+.btn{
+    padding:0;
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
+    box-shadow: none!important;
+}
+.btn-header{
+    text-indent: -9999em;
+}
+.btn-epv-wrapper .btn,
+/*.btn-swap,*/
+.btn-header,
+.tools-container-2 .btn{
+    width: 50px!important;
+    height:50px;
+    background-color:transparent;
+    padding:12px 10px;
+    margin:0!important;
+    background-position: center center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.btn-epv-wrapper .btn{
+    width: 50px!important;
+}
+.tools-container-2 .btn-pointer{
+    background-image:url('../img/lato-pointer-1.png');
+}
+.tools-container-2 .btn-pen{
+    background-image:url('../img/lato-pencil-1.png');
+}
+.tools-container-2 .btn-eraser{
+    background-image:url('../img/lato-eraser-1.png');
+}
+.tools-container-2 .btn-highlighter{
+    background-position: center center;
+    background-image:url('../img/lato-highlighter-1.png');
+}
+.tools-container-2 .btn-stopwatch{
+    background-image:url('../img/lato-stopwatch-1.png');
+    background-position: 8px center!important;
+}
+.tools-container-2 .btn-mask{
+    background-image:url('../img/lato-mask-1.png');
+    background-position: 9px center!important;
+}
+.tools-container-2 .btn-spotlight{
+    background-image:url('../img/lato-spotlight-1.png');
+    background-position: 9px center!important;
+}
+.tools-container-2 .btn-notes{
+    background-image:url('../img/lato-notes-1.png');
+    background-position: 13px center!important;
+}
+.tools-container-2 .btn-hotspots{
+    background-image:url('../img/lato-hotspots-1.png');
+    background-position: 12px center!important;
+}
+.left-handed #tools.shown .btn-header,
+.tools-container-2 .btn-header:hover,
+.tools-container-2 .btn-header{
+    background-image: url('../img/lato-expand-2.png');
+    background-position: 9px center!important;
+    background-color: #512c61;
+    height: 28px;
+}
+body.left-handed #tools .btn-header,
+.shown .btn-header:hover,
+.shown .btn-header{
+    background-image: url('../img/lato-expand-3.png');
+}
+.tools-container-2{
+    position: absolute;
+    bottom: 50px;
+		-webkit-user-select: none;
+}
+#menu-center,
+#menu{
+    bottom:0;
+    left:0;
+    background-color:#fff;
+}
+#menu .page-turner{
+    margin-left:0;
+    padding-left:0;
+    border-right:1px #b5aaaa solid;
+}
+.left-handed #menu .page-turner{
+    border-right:0;
+    float: right;
+    margin-right: 0;
+    border-right: 0;
+}
+.left-handed .page-turner{
+    margin-right: 3px;
+}
+.btn-epv > span, #pages, #pages ul li > a, .btn, .page-turner{
+    background-color: #fff;
+}
+
+.prev, .btn-epv .btn-left, #menu .page-turner .btn-left{
+    background-image:url('../img/lato-arrow-w-1.png');
+}
+.btn-epv .prev{
+    background-image:url('../img/lato-arrow-w-2.png');
+}
+.next, .btn-epv .btn-right, #menu .page-turner .btn-right{
+    background-image:url('../img/lato-arrow-e-1.png');
+}
+.btn-epv .next{
+    background-image:url('../img/lato-arrow-e-5.png');
+}
+#menu .page-turner .btn{
+    width: 50px;
+    height:50px;
+    margin:0;
+    background-position: center center;
+    padding:0;
+}
+#menu .page-turner .btn,
+#menu .btn{
+    height:auto;
+    width:auto;
+    padding: 0;
+    border: 0;
+}
+.media-tools-container .btn,
+#wrd-swap,
+#menu #ebookselector .pageloader{
+    line-height: 50px;
+    width: 50px;
+    font-size: 1.3em;
+}
+#ebookselector .pageloader.book-PupilapossBook{
+    border-right:1px #a896b1 solid;
+}
+.left-handed #ebookselector .pageloader.book-PupilapossBook{
+    border-right:0;
+    border-left:1px #a896b1 solid;
+}
+.left-handed .book-ActivityBook{
+    float:left;
+}
+.left-handed .book-PupilapossBook{
+    float:right;
+}
+#menu #wrd-swap{
+    width:auto;
+    padding-right: 1em;
+    padding-left: 3em;
+    border-right: 1px #b5aaaa solid;
+    background-image:url('../img/lato-swap-1.png');
+    background-position: 15px center;
+    display: block;
+    float: left;
+    margin-right: 0;
+}
+#menu #wrd-swap:hover{
+    color:#111;
+}
+.page-turner .page-num-1,
+.page-turner .page-num-2{
+    width: auto;
+    text-align: center;
+    padding: 0 6px;
+}
+#menu .page-turner .pageloader{
+    width:50px;
+    height: 50px;
+    /*display:block;*/
+    /*line-height:50px;*/
+}
+.btn-epv-wrapper, #menu .page-turner{
+    padding-right:0;
+}
+.page-num-1,
+.page-num-2{
+    margin:0!important;
+}
+.page-num-1{
+    /* padding-left:20px; */
+}
+.page-num-2{
+    /* padding-right:20px; */
+}
+#menu-center{
+    padding-left: 207px;
+    left:0;
+    width:100%;
+    margin-left:0;
+    z-index: 52;
+    height: 51px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+#menu-center .btn{
+    line-height: 1.5;
+    border-top:0;
+    border-right:0;
+    border-bottom:0;
+}
+#menu-center .btn-toggle{
+    margin-right:0;
+}
+#menu-center .btn-swap{
+    width:auto!important;
+    border-top:0!important;
+    padding:0 15px 0 55px;
+    background-image:url('../img/lato-swap-1.png');
+    background-position: 15px center;
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 50px;
+    margin-left: -3px!important;
+}
+#ebookselectorwrapper{
+    float:left;
+}
+#ebookselectorwrapper #ebookselector{
+    float:left;
+    /* border: 0; */
+}
+.left-handed #ebookselector{
+    border-right:0;
+}
+.btn-toggle .btn-active{
+    color:inherit;
+    text-decoration: none!important;
+}
+#tools .btn-header{
+    position: relative;
+}
+#menu-center{
+    background-image:url('../img/lato-logo-1.png');
+	background-position: 99% center;
+    background-repeat: no-repeat;
+}
+
+.btn-epv-wrapper .btn,
+#menu-center .media-tools-container .btn,
+#menu-center .btn-swap,
+#ebookselector,
+.btn-header,
+.tools-container-2 .btn,
+btn-epv .btn-left, #menu .page-turner .btn{
+    border-right: 1px #b5aaaa solid;
+}
+.left-handed .btn-header,
+.left-handed .tools-container-2 .btn{
+    border-left:1px #b5aaaa solid;
+}
+
+/*btn-epv .btn-left, #menu .page-turner,*/
+#menu,
+#menu-center,
+.btn-header,
+.tools-container-2 .btn{
+    border-top:1px #b5aaaa solid;
+}
+.btn,
+.btn-epv-wrapper, #menu .page-turner,
+.btn-toggle .btn{
+    color:#333;
+    font-weight: 300;
+}
+/*#tools .has-data,*/
+#pages .sub-page li a,
+.btn.current,
+.btn.active,
+.btn:hover:not(.deactivated),
+.btn-toggle .btn-active{
+    background-color: #73cf30!important;
+}
+.btn.btn-ab.pageloader.deactivated {
+	opacity: .5;
+}
+#menu-center .btn-swap,
+.page-turner,
+#menu .page-turner .btn,
+.btn-header,
+.tools-container-2 .btn{
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0important;
+    border-radius: 0important;
+}
+/*new left handed*/
+.left-handed #menu-center{
+    padding-left:0;
+}
+.left-handed #ebookselectorwrapper{
+    position: relative;
+    display: block;
+    /* right: 206px!important; */ 
+    /* top: 0; */
+    /* z-index: 999999; */
+    float: right;
+    /* width: 100%; */
+}
+.left-handed #ebookselectorwrapper #ebookselector,
+.left-handed #ebookselectorwrapper #wrd-swap,
+.left-handed #ebookselectorwrapper.media-tools-container{
+    float:right;
+    display: block;
+}
+.left-handed #ebookselectorwrapper #wrd-swap{
+    margin-left: -1px!important;
+    right: -1px;
+    border-left: 1px #b5aaaa solid;
+}
+body.left-handed #menu{
+    margin-right: -2px;
+}
+body.left-handed .btn-epv-wrapper, body.left-handed .page-turner, body.left-handed .btn-menu{
+    margin-left:0!important;
+    right: 0;
+}
+body.left-handed #menu-center{
+    background-position: 10px center;
+}
+body.left-handed #tools{
+    margin-right: -1px;
+}
+body.left-handed .shown .tools-container-2{
+    right:0;
+}
+body.left-handed #tools .btn-header{
+    float:right;
+    top: -28px;
+}
+#overlay,
+.panel-speckle,
+.flip-overlay{
+    position: fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background-image:url('../img/lato-bg-1.png');
+    z-index: 9999;
+    display: none;
+}
+.panel > .panel-speckle{
+    height:47px;
+    top:inherit;
+    bottom:-47px;
+}
+.panel-speckle,
+.flip-overlay{
+    position: absolute;
+}
+#overlay{
+    position: absolute;
+    z-index: 30;
+}
+.flip-overlay.top{
+    margin-top:-51px;
+}
+.pages-tabs-scroller,
+.back-header{
+    background:#512d62;
+    border-top: 0;
+}
+.back-header{
+    color:#fff;
+    font-size:13px;
+    padding:15px;
+    text-align: left;
+    position: relative;
+}
+.back-header .panel-close{
+    display: block;
+    width:26px;
+    height:27px;
+    background:url('../img/lato-close-1.png') no-repeat center center;
+    position: absolute;
+    top:50%;
+    margin-top:-13px;
+    right:10px;
+    cursor: pointer;
+}
+.back-content{
+    background:#fff;
+}
+.scroll{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+.scroll > li.shown > a:after
+{
+    position: absolute;
+    content:'';
+    display: block;
+    width:13px!important;
+    height:7px!important;
+    background:url('../img/lato-arrow-ns-1.png') no-repeat center bottom;
+    left:25px;
+    bottom:-7px;
+    z-index: 999;
+}
+.scroll > li.shown > a,
+.scroll > li:hover > a,
+.scroll > li.shown > ul > li:hover
+{
+    background-color:#73cf30!important;
+    position: relative;
+}
+.scroll > li.shown > .info,
+.scroll > li:hover > .info
+{
+    background-image:url('../img/lato-info-2.png');
+} 
+.scroll li
+{
+    text-align: left;    
+    padding: 4px 20px;
+    border-bottom: 1px #e2e2e2 solid;
+    position: relative;
+}
+.scroll > li > a
+{
+    display: block;
+    width:100%;
+    padding:4px 20px;
+}
+.scroll > li
+{
+    padding:0;
+}
+.scroll .info
+{
+    display: block;
+    width:25px;
+    height:25px;
+    position: absolute;
+    right:10px;
+    top:10px;
+    background: transparent url('../img/lato-info-1.png') no-repeat center center;
+    cursor: pointer;
+}
+.info-wrapper{
+    position: absolute;
+    left:100%;
+    background:#fff;
+    z-index: 999;
+    border:2px #666 solid;
+    z-index: 999999;
+    display: none!important;
+}
+.info-wrapper.show{
+    display: block!important;
+}
+.info-wrapper i{
+    position: absolute;
+    width:6px;
+    height:14px;
+    background:url('../img/lato-arrow-we-2.png') no-repeat right center;
+    right: -7px;
+    top: 14px;
+}
+.info-wrapper-close{
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 27px;
+    right:10px;
+    top:5px;
+    background: url('../img/lato-close-1.png') no-repeat center center;
+}
+.info-wrapper-header:hover,
+.info-wrapper-header{
+    background:#512d62;
+    padding: 6px 13px 12px;
+    color:#fff;
+    font-weight: 300;
+    display: block;
+    width:140px;
+    margin-left: -1px; margin-right: -1px; margin-top: -1px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.info-wrapper-container{
+    display: block;
+}
+.info-wrapper p:last-child{
+    border-bottom:0;
+}
+.info-wrapper p{
+    margin:0;
+    padding:2px 13px;
+    border-bottom:1px #ccc solid;
+    font-size:13px;
+}
+.back-content ul li ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+    display: none;
+}
+ul.scroll li ul li:first-child{
+    border-top:0;
+}
+ul.scroll li ul li{
+    border-bottom:0!important;
+    border-top:1px #e2e2e2 solid;
+    padding: 2px!important;
+    
+}
+#pages .pageloader,
+ul.scroll li ul li a{
+    background:url('../img/lato-arrow-e-4.png') no-repeat right center;
+}
+ul.scroll li ul li a{
+    border-left: 3px #73cf30 solid;
+    display: block;
+}
+ul.scroll li ul li span:not(.pagenumbers){
+    margin-left:50px!important;
+}
+.scroll span{
+    vertical-align: middle;
+    display: inline-block;
+    font-size:18px;
+    color:#111;
+    line-height: 2;
+    margin-left: 13px;
+}
+.scroll i{
+    display: inline-block;
+    width:25px;
+    height:25px;
+    background:url('../img/lato-plus-1.png') no-repeat center center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.scroll .shown i{
+    background:url('../img/lato-minus-1.png') no-repeat center center;
+}
+.pages-tab-scrollbottom,
+.pages-tab-scrolltop
+{
+    width:33px!important;
+    height:33px!important;
+    background:transparent url('../img/lato-arrow-n-1.png') no-repeat center center!important;
+    text-indent: -9999em;
+    display: inline-block;
+    position: relative;
+    top:4px;
+}
+.back-header i{
+    font-weight: bold;
+    font-style: normal;
+    font-size:22px;
+    margin-left:10px;
+}
+.select-menu .selected,
+.back-header h1{
+    margin:0;
+    padding:0;
+    font-weight: 300;    
+    font-size: 22px;
+}
+.panel.small .back-header h1{
+    font-size:16px;
+}
+.pages-tab-scrollbottom{
+    background:transparent url('../img/lato-arrow-s-1.png') no-repeat center center!important;
+    margin-left:4px;
+}
+.pages-tabs-scroller{
+    text-align: right;
+    padding:5px 10px;
+}
+.select-menu{
+    position: relative;
+    padding: 4px 40px 4px 10px;
+    /*border:1px #fff solid;*/
+    border:1px #a896b1 solid;
+    background: transparent url('../img/lato-arrow-s-5.png') no-repeat right bottom;
+    /*background:transparent url('../img/lato-select-expand.png') no-repeat right bottom;*/
+    display: inline-block;
+    cursor: pointer;
+}
+.select-menu.expanded{
+    color:#111;
+    background:#fff url('../img/lato-arrow-n-3.png') no-repeat right bottom;
+}
+#pages .select-menu.expanded .select-options,
+#pages .select-menu{
+    width:205px;
+}
+.select-options{
+    display: none;
+    position: absolute;
+    left: -1px;
+    margin-left: 0;
+    z-index: 99;
+    top: 34px;
+    min-width: 167px;
+    border:2px #666 solid;
+    background:#fff;
+}
+.select-menu.expanded .select-options{
+    display: block;
+}
+.select-options a{
+    display: block;
+    margin:0;
+    padding:3px 10px;
+    border-top:1px #e2e2e2 solid;
+}
+.select-options a:hover{
+    color:#000;
+}
+.media-tools-container .btn-vocabulary-tool{
+    background:url('../img/lato-vocab-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-story-tool{
+    background:url('../img/lato-book-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-dialogue-tool{
+    background:url('../img/lato-dialogue-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-grammar-tool{
+    background:url('../img/lato-grammar-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-teacher-tips{
+    background:url('../img/lato-bulb-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-image{
+    background:url('../img/lato-image-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-interactive{
+    background:url('../img/lato-activity-3.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-karaoke{
+    background:url('../img/lato-mic-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-answers{
+    background:url('../img/lato-questions-1.png') no-repeat center center;
+    width:52px;
+}
+.media-tools-container .btn-video{
+    background:url('../img/lato-video-1.png') no-repeat center center;
+    width:60px;
+}
+.media-tools-container .btn-audio, .media-tools-container .btn-audiop{
+    background:url('../img/lato-audio-1.png') no-repeat center center;
+    width:55px;
+}
+#menu-center .media-tools-container .btn{
+    float:left;
+    text-indent: -99999em;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin:0;
+    height: 50px;
+}
+.left-handed #menu-center .media-tools-container .btn:first-child{
+    border-left:1px #b5aaaa solid;
+}
+#menu-center .media-tools-container{
+    position: relative;
+    left:0;
+    bottom:0;
+    display: inline-block;
+    width:auto;
+    vertical-align: top;
+    margin-left: -3px;
+}
+.left-handed #menu-center .media-tools-container{
+    margin-right: -1px!important;
+    float: right;
+}
+.btn-epv-wrapper{
+    position: absolute;
+    left:0;
+    background:#fff;
+    z-index: 3;
+}
+.left-handed .btn-epv-wrapper{
+    left:inherit;
+    right: 3px;
+}
+.btn-epv-wrapper .btn{
+    text-indent: -99999em;
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+}
+.btn-epv-wrapper .btn.next{
+    /* margin-left:-3px!important; */
+}
+.ui-draggable .ui-dialog-titlebar{
+     background-image:url('../img/lato-drag-bg-1.png');
+     background-position: center 2px;
+     background-repeat: no-repeat;
+}
+
+.dialog-vt-dialog .ui-dialog-titlebar,
+.dialog-st-dialog .ui-dialog-titlebar,
+.dialog-dt-dialog .ui-dialog-titlebar,
+.dialog-gt-dialog .ui-dialog-titlebar{
+    padding: 10px!Important;
+    border-bottom: 4px #e40426 solid;
+}
+.bigger-timer.going,
+.dialog-timer-dialog.going{
+    -webkit-box-shadow: 0 0 4px rgba(115,207,48,1);
+    border-color:#73cf30!important;
+    -webkit-animation:border-color-change 1.5s infinite;
+    -moz-animation:border-color-change 0.2s infinite;
+}
+.media-tools-container.grow{
+    -webkit-animation:grow 0.7s 1;
+    -webkit-transform-origin: 0 100%;
+    -moz-animation:grow 0.7s 1;
+    -moz-transform-origin: 0 100%;
+    position: relative;
+    top:-1px;
+}
+.media-tools-container .pulsate{
+    -webkit-animation:pulsate 1s 1;
+    -moz-animation:pulsate 1s 1;
+}
+.dialog-timer-dialog.pulsate,
+.bigger-timer.pulsate{
+    -webkit-animation:pulsate 1s infinite;
+    -moz-animation:pulsate 1s infinite;
+}
+.bigger-timer,
+.dialog-timer-dialog{
+    -webkit-transition:border-color 0.2s ease-in-out;
+    -moz-transition:border-color 0.2s ease-in-out;
+    transition:border-color 0.2s ease-in-out;
+}
+.ui-dialog-titlebar{
+    padding-left:37px!important;
+}
+.bigger-timer .ui-dialog-titlebar:before,
+.dialog-image-dialog .ui-dialog-titlebar:before,
+.dialog-help-dialog .ui-dialog-titlebar:before,
+.dialog-answers-dialog .ui-dialog-titlebar:before,
+.dialog-vocab-dialog .ui-dialog-titlebar:before,
+.dialog-teacher-tips-dialog .ui-dialog-titlebar:before,
+.dialog-video-dialog .ui-dialog-titlebar:before,
+.dialog-interactive-dialog .ui-dialog-titlebar:before,
+.dialog-karaoke-dialog .ui-dialog-titlebar:before,
+.dialog-audio-dialog .ui-dialog-titlebar:before,
+.dialog-audiop-dialog .ui-dialog-titlebar:before,
+.dialog-note-dialog .ui-dialog-titlebar:before,
+.dialog-timer-dialog .ui-dialog-titlebar:before{
+    content:'';
+    display: block;
+    position: absolute;
+    width:24px;
+    height:27px;
+    left:5px;
+    top:6px;
+    background-image:url('../img/lato-stopwatch-2.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bigger-timer .ui-icon-closethick{
+    left: 1px;
+    top: -1px;
+}
+.bigger-timer .ui-dialog-titlebar:before{
+    top: 5px;
+}
+/*.bigger-timer .ui-dialog-titlebar:before{
+    position: absolute;
+    width:38px;
+    height:44px;
+    left:9px;
+    top:5px;
+    background-image:url('../img/lato-stopwatch-3.png');
+}*/
+.bigger-timer .ui-dialog-titlebar{
+    /*padding-left:55px!important;*/
+}
+.dialog-note-dialog .ui-dialog-titlebar{
+    padding-left:30px!important;
+}
+.dialog-help-dialog .ui-dialog-titlebar:before{
+    width: 26px;
+    background-image: url('../img/lato-help-2.png');
+    top: 5px;
+    left: 6px;
+}
+.dialog-note-dialog .ui-dialog-titlebar:before{
+    width:18px;
+    background-image:url('../img/lato-notes-2.png');
+    top:4px;
+}
+.dialog-audio-dialog .ui-dialog-titlebar, .dialog-audiop-dialog .ui-dialog-titlebar{
+    padding-left:41px!important;
+}
+.dialog-audio-dialog .ui-dialog-titlebar:before,.dialog-audiop-dialog .ui-dialog-titlebar:before{
+    /*width:18px;*/
+    width:29px;
+    background-image:url('../img/lato-audio-2.png');
+}
+.dialog-interactive-dialog .ui-dialog-titlebar:before{
+    background-image:url('../img/lato-activity-4.png');
+    background-position: 3px center;
+}
+.dialog-karaoke-dialog .ui-dialog-titlebar:before{
+    background-image:url('../img/lato-mic-2.png');
+}
+.dialog-video-dialog .ui-dialog-titlebar{
+    padding-left:56px!important;
+}
+.dialog-video-dialog .ui-dialog-titlebar:before{
+    width:39px;
+    left:7px;
+    background-image:url('../img/lato-video-2.png');
+}
+.dialog-teacher-tips-dialog .ui-dialog-titlebar:before{
+    background-image:url('../img/lato-bulb-2.png');
+}
+.dialog-vocab-dialog .ui-dialog-titlebar{
+    padding-left:38px!important;
+}
+.dialog-vocab-dialog .ui-dialog-titlebar:before{
+    width:28px;
+    background-image:url('../img/lato-vocab-2.png');
+}
+.dialog-answers-dialog .ui-dialog-titlebar:before{
+    background-image:url('../img/lato-questions-2.png');
+}
+.dialog-image-dialog .ui-dialog-titlebar:before{
+    background-image:url('../img/lato-image-2.png');   
+    width:35px;
+}
+.alert{
+    position:absolute;
+    left:50%;
+    top:50%;
+    color:#fff;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    opacity: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.alert.alert-success{
+    background-color:#73cf30;
+    background-image:url('../img/check-1.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding: 8px 28px 8px 14px;
+}
+
+#user_warning{
+    position: absolute;
+    
+    left: 0;
+    top: 25%;
+    width: 100%;
+    background: #555;
+    text-align: center;
+    padding: 1.2em 0;
+    display: none;
+}
+#user_warning h1{
+    margin: 0;
+    
+    padding: 0;
+    color: #fff;
+    font-size: 1.7em;
+    font-weight: normal;
+}
+#user_warning label{
+    color: #fff;
+    
+    font-size: 1.2em;
+    margin-top: 0.6em;
+    display: block;
+    padding: 0;
+    margin-bottom: 0;
+    position: relative;
+}
+#user_warning input[type="checkbox"]{
+    position: relative;
+    
+    top: -2px;
+    margin-right: 0.2em;
+}
+#dialog-note{
+    position: relative;
+    width:auto!important;
+    height: auto!important;
+}
+#dialog-note .dialog-button-pane{
+    position: absolute;
+    bottom: 4px;
+    left:10px;
+    padding: 0;
+}
+
+.assClass{
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    margin:0 auto;
+    top: -30px;
+    left: 50%;
+    z-index: 0;
+    margin-left: -100px;
+}
+.assClass span{
+    display: inline-block;
+    text-indent: -9999em;
+    width: 9px;
+    height: 9px;
+    border: 1px #fff solid;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    -moz-border-radius: 1em;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 0 0.25em;
+}
+.assClass span:hover{
+    -webkit-transform: scale(1.2,1.2);
+    -moz-transform: scale(1.2,1.2);
+    transform: scale(1.2,1.2);
+}
+.assClass .current{
+    background-color:#fff;
+}
+.assClass .left{
+    width: 12px;
+    height: 19px;
+    border: 0;
+    background: url('../img/lato-arrow-w-3.png') no-repeat left top;
+    position: relative;
+    top: 0px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+.assClass .right{
+    width: 12px;
+    height: 19px;
+    border:0;
+    position: relative;
+    top: 0px;
+    background: url('../img/lato-arrow-e-6.png') no-repeat left top;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+@-moz-keyframes border-color-change{
+    0%   {
+        border-color:#73cf30;
+    }
+    50% { border-color:#7cff1c; }
+    100%   { border-color:#73cf30; }
+}
+@-webkit-keyframes pulsate{
+    0%{
+        -webkit-box-shadow: 0 0 9px rgba(115,207,48,1);
+        -moz-box-shadow: 0 0 9px rgba(115,207,48,1);
+        box-shadow: 0 0 9px rgba(115,207,48,1);
+    }
+    25%{
+        -webkit-box-shadow: 0 0 18px rgba(124,255,28,1);
+        -moz-box-shadow: 0 0 18px rgba(124,255,28,1);
+        box-shadow: 0 0 18px rgba(124,255,28,1);
+    }
+    50%{
+        -webkit-box-shadow: 0 0 9px rgba(115,207,48,1);
+        -moz-box-shadow: 0 0 9px rgba(115,207,48,1);
+        box-shadow: 0 0 9px rgba(115,207,48,1);
+    }
+    75%{
+        -webkit-box-shadow: 0 0 18px rgba(124,255,28,1);
+        -moz-box-shadow: 0 0 18px rgba(124,255,28,1);
+        box-shadow: 0 0 18px rgba(124,255,28,1);
+    }
+    100%{
+        -webkit-box-shadow: 0 0 9px rgba(115,207,48,1);
+        -moz-box-shadow: 0 0 9px rgba(115,207,48,1);
+        box-shadow: 0 0 9px rgba(115,207,48,1);
+    }
+}
+@-webkit-keyframes border-color-change{
+    0%{
+        -webkit-box-shadow: 0 0 9px rgba(115,207,48,1);
+        -moz-box-shadow: 0 0 9px rgba(115,207,48,1);
+        box-shadow: 0 0 9px rgba(115,207,48,1);
+    }
+    50%{
+        -webkit-box-shadow: 0 0 18px rgba(124,255,28,1);
+        -moz-box-shadow: 0 0 18px rgba(124,255,28,1);
+        box-shadow: 0 0 18px rgba(124,255,28,1);
+    }
+    100%{
+        -webkit-box-shadow: 0 0 9px rgba(115,207,48,1);
+        -moz-box-shadow: 0 0 9px rgba(115,207,48,1);
+        box-shadow: 0 0 9px rgba(115,207,48,1);
+    }
+}
+
+
+.shown ul{
+    display: block!important;
+}
+
+div.header {
+	z-index: 10;
+}
+
+.app-close{
+    display: block;
+    width:26px;
+    height:27px;
+    background:url('../img/lato-close-1.png') no-repeat center center;
+    position: absolute;
+    top:50%;
+    margin-top:-13px;
+    right:10px;
+    cursor: pointer;
+}
+.left-handed .app-close{
+    right:inherit;
+    left:15px;
+}
+/* for the contents menus */
+.pagenumbers {
+	float: right;
+	margin-right: 40px!important;
+}
+.tt-iframe{
+    width:100%;
+    height:100%;
+}
+.ui-dialog .ui-dialog-content{
+    padding:10px;
+}
+#dialog-dt,
+#dialog-vt,
+#dialog-st,
+#dialog-gt{
+    padding:0;
+}
+.header-gear, .header-home, .header-back-button, .header-forward-button, .header-tips{
+    /* position: absolute; */
+    width: 28px;
+    height: 28px;
+    /* right: 75px; */
+    /* top: 50%; */
+    /* margin-top: -13px; */
+    /* display: block; */
+    /* background-size: 100%!important; */
+    background: url('../img/rs-back-1.png') no-repeat center center;
+    z-index: 99999;
+    cursor: pointer;
+    display: block;
+}
+.header-forward-button{
+    background: url('../img/rs-forward-1.png') no-repeat center center;
+    left: -1px;
+}
+.header-units, .header-home, .header-back-button, .header-gear, .header-forward-button, .header-tips{
+    position: relative;
+    top:0;
+    margin-top:0;
+    right: auto!important;
+    float: left;
+    border: 1px #a491ad solid;
+    padding: 19px!important;
+    background-size: 76%!important;
+    margin-right: 11px;
+    text-indent: -99999em;
+    height: 26px;
+    z-index: 999999;
+    cursor: pointer;
+}
+
+.header-back-button, .header-forward-button {
+	margin-right: 0px!important;
+}
+
+.dialog-dt-dialog .header-units,
+.dialog-st-dialog .header-units{
+    display: none!important;
+}
+
+.dialog-dt-dialog .ui-dialog-titlebar-restore,
+.dialog-dt-dialog .ui-dialog-titlebar-minimize,
+.dialog-vt-dialog .ui-dialog-titlebar-restore,
+.dialog-vt-dialog .ui-dialog-titlebar-minimize,
+.dialog-st-dialog .ui-dialog-titlebar-restore,
+.dialog-st-dialog .ui-dialog-titlebar-minimize,
+.dialog-gt-dialog .ui-dialog-titlebar-restore,
+.dialog-gt-dialog .ui-dialog-titlebar-minimize {
+    margin-right: 17px;
+}
+
+.dialog-vt-dialog .ui-dialog-title,
+.dialog-st-dialog .ui-dialog-title,
+.dialog-dt-dialog .ui-dialog-title,
+.dialog-gt-dialog .ui-dialog-title {
+    line-height: 36px;
+    background: url('../img/lato-vocab-3.png') no-repeat left center;
+    padding-left: 27px;
+    margin-left: 11px;
+    /*font-weight: bold;*/
+    letter-spacing: -0.03em;
+    margin-right: 17px;
+    font-size: 22px;
+    font-family: 'Muli';
+}
+
+.unitInfo {
+    margin-left: 7px;
+}
+
+.dialog-st-dialog .ui-dialog-title {
+    background-image: url('../img/lato-book-1-white.png');
+    padding-left: 38px;
+}
+
+.dialog-dt-dialog .ui-dialog-title {
+    background-image: url('../img/lato-dialogue-2.png');
+    padding-left: 38px;
+}
+.dialog-gt-dialog .ui-dialog-title {
+    background-image: url('../img/lato-grammar-1.png');
+    padding-left: 38px;
+}
+.header-back-button.disabled, .header-forward-button.disabled, .header-units.disabled {
+    opacity:0.5;
+}
+.header-home{
+    /* right:112px; */
+    background: url('../img/rs-home-1.png') no-repeat center center;
+}
+.header-home.active{
+    background:url('../img/rs-home-3.full.nb.png') no-repeat center center;
+    background-size: 120%!important;
+}
+.header-gear{
+    /* right:153px; */
+    background:url('../img/rs-gear-1.png') no-repeat center center;
+    display: none;
+    margin-right: 150px;
+    background-size: 86%!important;
+}
+.header-gear.active{
+  background-color:#73cf30;
+  background-image:url('../img/rs-gear-2.png');
+}
+.dialog-vt-dialog .header-gear, .dialog-st-dialog .header-tips{
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    /* padding-left: 31px; */
+    /* right: 130px; */
+    /* width: auto; */
+    /* background-size: 70%!important; */
+    /* background-position: left center; */
+    text-indent: -9999em;
+    float: right;
+    right: auto;
+}
+
+.dialog-vt-dialog .header-units {
+    background: url('../img/lato-info-2.png') no-repeat center center;
+    background-size: 72%!important;
+}
+.header-units.active{
+  background-color:#73cf30;
+  background-image:url('../img/lato-info-1.png');
+
+}
+.dialog-st-dialog .header-tips {
+    background: url('../img/lato-smarttip-1.png') no-repeat center center;
+    background-size: 100%!important;
+    margin-right: 150px;
+}
+.dialog-st-dialog .header-tips.active {
+    background: url('../img/lato-smarttip-2.png') repeat center center;
+    background-size: 100%!important;
+    margin-right: 150px;
+}
+#tipsLogo {
+	position: absolute;
+  	right: 95px;
+  	top: 6px;
+}
+#nextActivity,
+#prevActivity{
+    position: absolute;
+    left: 200px;
+    color:#fff;
+    z-index:9999;
+    cursor: pointer;
+    display: none;
+}
+#nextActivity{
+    left: 293px;
+}
